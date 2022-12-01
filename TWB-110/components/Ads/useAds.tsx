@@ -483,16 +483,16 @@ export const useAds = (initAds: () => void) => {
      * Init the DFP with config and tags
      */
     window.initDFP = function () {
-    /**
-      *   TWB-110 AC3
-    */
+        /**
+          *   TWB-110 AC3
+          */
     window.cX.callQueue.push(['invoke', function() {
         window.cX.getUserSegmentIds({
           persistedQueryId: 'cbb70b39cf3dfef346c9c7de7832fc68fd6ba590', 
           callback: function( cXsegmentIds ) {
-    /**
-      *   TWB-110 AC3 
-      */
+          /**
+            *   TWB-110 AC3 
+            */
       window.googletag.cmd.push(function () {
         googletag.pubads().enableAsyncRendering();
         // Header Bidding Targeting
@@ -501,6 +501,7 @@ export const useAds = (initAds: () => void) => {
         window.googletag.pubads().setTargeting('pgtype', window.pgtype);
         window.googletag.pubads().setTargeting('category', window.category);
         window.googletag.pubads().setTargeting('breakpoint', window.device);
+        window.googletag.pubads().setTargeting('siteName', window.siteName); // TWB-110 AC1
         window.googletag.pubads().setTargeting("CxSegments", cXsegmentIds); // DMP TWB-110 AC3
         if (!!window.trd && window.trd.user_type) {
           window.googletag.pubads().setTargeting('utype', window.trd.user_type);
@@ -610,7 +611,10 @@ export const useAds = (initAds: () => void) => {
         window.googletag.setAdIframeTitle('ADVERTISEMENT');
         window.googletag.enableServices();
       });
-    };
+    }
+  });
+}]);
+}
 
     /**
      * Load GPT script
