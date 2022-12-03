@@ -314,7 +314,7 @@ export const useAds = (initAds: () => void) => {
     window.pid = 'homepage';
     window.pgtype = 'landing';
     window.device = 'desktop';
-    window.siteName = 'preview'; // TWB-110 AC1
+    window.siteName = '';
     window.adUnit = null;
     window.slotName = null;
     window.date = new Date();
@@ -324,17 +324,18 @@ export const useAds = (initAds: () => void) => {
     window.adUnits = window.adUnits || [];
     window.test = window.CurrentURL.searchParams.get('test');
     window.trd_prebid_path = '/js/a3.1-prebid-3.14.0.js';
+
     /**
-     * TinyPass DMP 
+     * TinyPass DMP
+     * @since TWB-110 AC3
      */
-     window.cX = window.cX || {}; 
-     window.cX.callQueue = window.cX.callQueue || []; // TWB-110 AC3
+    window.cX = window.cX || {};
+    window.cX.callQueue = window.cX.callQueue || [];
     /**
      * GT and prebid var
      */
     window.googletag = window.googletag || { cmd: [] };
     window.pbjs = window.pbjs || { que: [] };
-
     /**
      * Ad size for common potions
      */
@@ -460,6 +461,20 @@ export const useAds = (initAds: () => void) => {
       return window.topLevelAdUnit;
     };
 
+    // Evalute and set siteName
+    window.setSiteName = function () {
+      let hostName = `${window.location.hostname}`;
+      if (hostName.startsWith('dev')) {
+        siteName = 'dev';
+      } else if (hostName.startsWith('local')) {
+        siteName = 'local';
+      } else if (hostName.startsWith('preview')) {
+        siteName = 'preview';
+      } else {
+        siteName = 'stg';
+      }
+    };
+
     /**
      * Update global config var base on other global config vars
      */
@@ -483,138 +498,161 @@ export const useAds = (initAds: () => void) => {
      * Init the DFP with config and tags
      */
     window.initDFP = function () {
-        /**
-          *   TWB-110 AC3
-          */
-    window.cX.callQueue.push(['invoke', function() {
-        window.cX.getUserSegmentIds({
-          persistedQueryId: 'cbb70b39cf3dfef346c9c7de7832fc68fd6ba590', 
-          callback: function( cXsegmentIds ) {
-          /**
-            *   TWB-110 AC3 
-            */
-      window.googletag.cmd.push(function () {
-        googletag.pubads().enableAsyncRendering();
-        // Header Bidding Targeting
-        window.googletag.pubads().setTargeting('s1', window.s1);
-        window.googletag.pubads().setTargeting('pid', window.pid);
-        window.googletag.pubads().setTargeting('pgtype', window.pgtype);
-        window.googletag.pubads().setTargeting('category', window.category);
-        window.googletag.pubads().setTargeting('breakpoint', window.device);
-        window.googletag.pubads().setTargeting('siteName', window.siteName); // TWB-110 AC1
-        window.googletag.pubads().setTargeting("CxSegments", cXsegmentIds); // DMP TWB-110 AC3
-        if (!!window.trd && window.trd.user_type) {
-          window.googletag.pubads().setTargeting('utype', window.trd.user_type);
-        }
-        if (
-          !!window.trd &&
-          window.trd.post &&
-          window.trd.post.tags_slug_string
-        ) {
-          window.googletag
-            .pubads()
-            .setTargeting('tags', window.trd.post.tags_slug);
-        }
-        if (window.test) {
-          window.googletag.pubads().setTargeting('test', window.test);
-        }
-        // Init DFP
-        window.googletag.pubads().collapseEmptyDivs();
-        window.googletag
-          .pubads()
-          .addEventListener('slotRequested', function (event) {
-            dataLayer.push({
-              event: 'event_tracking',
-              'trd.action': 'requested',
-              'trd.category': 'dynamic ads',
-              'trd.label':
-                window.slotName +
-                '/' +
-                window.device +
-                '/' +
-                event.slot.getSlotElementId(),
-              'trd.non_interaction': false,
-            });
-          });
-        window.googletag
-          .pubads()
-          .addEventListener('slotRenderEnded', function (event) {
-            if (!event.isEmpty) {
-              dataLayer.push({
-                event: 'event_tracking',
-                'trd.action': 'render ended',
-                'trd.category': 'dynamic ads',
-                'trd.label':
-                  window.slotName +
-                  '/' +
-                  window.device +
-                  '/' +
-                  event.slot.getSlotElementId(),
-                'trd.non_interaction': false,
+      /**
+       * @since TWB-110 AC3
+       */
+      window.cX.callQueue.push([
+        'invoke',
+        function () {
+          window.cX.getUserSegmentIds({
+            persistedQueryId: 'cbb70b39cf3dfef346c9c7de7832fc68fd6ba590',
+            callback: function (cXsegmentIds) {
+              /**
+               * @since TWB-110 AC3
+               */
+              window.googletag.cmd.push(function () {
+                googletag.pubads().enableAsyncRendering();
+                // Header Bidding Targeting
+                window.googletag.pubads().setTargeting('s1', window.s1);
+                window.googletag.pubads().setTargeting('pid', window.pid);
+                window.googletag.pubads().setTargeting('pgtype', window.pgtype);
+                window.googletag
+                  .pubads()
+                  .setTargeting('category', window.category);
+                window.googletag
+                  .pubads()
+                  .setTargeting('breakpoint', window.device);
+                window.googletag
+                  .pubads()
+                  .setTargeting('siteName', window.siteName); // TWB-110 AC1
+                window.googletag
+                  .pubads()
+                  .setTargeting('CxSegments', cXsegmentIds); // DMP TWB-110 AC3
+                if (!!window.trd && window.trd.user_type) {
+                  window.googletag
+                    .pubads()
+                    .setTargeting('utype', window.trd.user_type);
+                }
+                if (
+                  !!window.trd &&
+                  window.trd.post &&
+                  window.trd.post.tags_slug_string
+                ) {
+                  window.googletag
+                    .pubads()
+                    .setTargeting('tags', window.trd.post.tags_slug);
+                }
+                if (window.test) {
+                  window.googletag.pubads().setTargeting('test', window.test);
+                }
+                // Init DFP
+                window.googletag.pubads().collapseEmptyDivs();
+                window.googletag
+                  .pubads()
+                  .addEventListener('slotRequested', function (event) {
+                    dataLayer.push({
+                      event: 'event_tracking',
+                      'trd.action': 'requested',
+                      'trd.category': 'dynamic ads',
+                      'trd.label':
+                        window.slotName +
+                        '/' +
+                        window.device +
+                        '/' +
+                        event.slot.getSlotElementId(),
+                      'trd.non_interaction': false,
+                    });
+                  });
+                window.googletag
+                  .pubads()
+                  .addEventListener('slotRenderEnded', function (event) {
+                    if (!event.isEmpty) {
+                      dataLayer.push({
+                        event: 'event_tracking',
+                        'trd.action': 'render ended',
+                        'trd.category': 'dynamic ads',
+                        'trd.label':
+                          window.slotName +
+                          '/' +
+                          window.device +
+                          '/' +
+                          event.slot.getSlotElementId(),
+                        'trd.non_interaction': false,
+                      });
+                    }
+                  });
+                window.googletag
+                  .pubads()
+                  .addEventListener('impressionViewable', function (event) {
+                    dataLayer.push({
+                      event: 'event_tracking',
+                      'trd.action': 'impression viewable',
+                      'trd.category': 'dynamic ads',
+                      'trd.label':
+                        window.slotName +
+                        '/' +
+                        window.device +
+                        '/' +
+                        event.slot.getSlotElementId(),
+                      'trd.non_interaction': false,
+                    });
+                  });
+                window.googletag
+                  .pubads()
+                  .addEventListener('slotOnload', function (event) {
+                    if (window.device === 'mobile') {
+                      if (
+                        !event.slot
+                          .getSlotElementId()
+                          .startsWith('div-id-for-mid') ||
+                        !event.slot
+                          .getSlotElementId()
+                          .startsWith('div-id-for-right')
+                      )
+                        return;
+                    } else {
+                      if (
+                        !event.slot
+                          .getSlotElementId()
+                          .startsWith('div-id-for-mid')
+                      )
+                        return;
+                    }
+                    var adUnit = document.getElementById(
+                      event.slot.getSlotElementId(),
+                    );
+
+                    if (adUnit.children[0]?.className.includes('text-center')) {
+                      return;
+                    }
+
+                    var adText = document.createElement('small');
+                    adText.className =
+                      'd-block text-muted text-uppercase mb-2 text-center';
+                    adText.setAttribute('style', 'font-size: 10px;');
+                    adText.innerText = 'ADVERTISEMENT';
+                    adUnit.prepend(adText);
+                    dataLayer.push({
+                      event: 'event_tracking',
+                      'trd.action': 'loaded',
+                      'trd.category': 'dynamic ads',
+                      'trd.label':
+                        window.slotName +
+                        '/' +
+                        window.device +
+                        '/' +
+                        event.slot.getSlotElementId(),
+                      'trd.non_interaction': false,
+                    });
+                  });
+                window.googletag.setAdIframeTitle('ADVERTISEMENT');
+                window.googletag.enableServices();
               });
-            }
+            },
           });
-        window.googletag
-          .pubads()
-          .addEventListener('impressionViewable', function (event) {
-            dataLayer.push({
-              event: 'event_tracking',
-              'trd.action': 'impression viewable',
-              'trd.category': 'dynamic ads',
-              'trd.label':
-                window.slotName +
-                '/' +
-                window.device +
-                '/' +
-                event.slot.getSlotElementId(),
-              'trd.non_interaction': false,
-            });
-          });
-        window.googletag
-          .pubads()
-          .addEventListener('slotOnload', function (event) {
-            if (window.device === 'mobile') {
-              if (
-                !event.slot.getSlotElementId().startsWith('div-id-for-mid') ||
-                !event.slot.getSlotElementId().startsWith('div-id-for-right')
-              )
-                return;
-            } else {
-              if (!event.slot.getSlotElementId().startsWith('div-id-for-mid'))
-                return;
-            }
-            var adUnit = document.getElementById(event.slot.getSlotElementId());
-
-            if (adUnit.children[0]?.className.includes('text-center')) {
-              return;
-            }
-
-            var adText = document.createElement('small');
-            adText.className =
-              'd-block text-muted text-uppercase mb-2 text-center';
-            adText.setAttribute('style', 'font-size: 10px;');
-            adText.innerText = 'ADVERTISEMENT';
-            adUnit.prepend(adText);
-            dataLayer.push({
-              event: 'event_tracking',
-              'trd.action': 'loaded',
-              'trd.category': 'dynamic ads',
-              'trd.label':
-                window.slotName +
-                '/' +
-                window.device +
-                '/' +
-                event.slot.getSlotElementId(),
-              'trd.non_interaction': false,
-            });
-          });
-        window.googletag.setAdIframeTitle('ADVERTISEMENT');
-        window.googletag.enableServices();
-      });
-    }
-  });
-}]);
-}
+        },
+      ]);
+    };
 
     /**
      * Load GPT script
@@ -656,7 +694,9 @@ export const useAds = (initAds: () => void) => {
         return false;
       }
       window.trd_ad_init = true;
-      // 0. Load Prebid as fast as possible to get make it available when is called.
+
+      // 0. Load Prebid as fast as possible to get make it available when is called and evaluate siteName.
+      setSiteName();
       loadGPT();
       loadPreBid();
       // 1. update the TLAU
