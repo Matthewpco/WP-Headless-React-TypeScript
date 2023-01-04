@@ -1,0 +1,24 @@
+@import '../../styles/colors';
+@import '../../styles/media-breakpoints';
+
+.root {
+  font-family: 'Proxima Nova', serif;
+}
+
+.title {
+  color: $gray-2;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin: 0 0 12px;
+  text-transform: uppercase;
+
+  @include mobile {
+    font-size: 10px;
+  }
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}

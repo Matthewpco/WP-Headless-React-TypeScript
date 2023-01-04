@@ -1,0 +1,25 @@
+@import '../../../../styles/colors';
+@import '../../../../styles/media-breakpoints';
+@import '../../../../styles/theme';
+
+.root {
+  padding: 20px;
+  background: $white;
+
+  @include mobile {
+    padding: 0;
+  }
+
+  @include ThemeDark {
+    background-color: $mine-shaft;
+  }
+}
+
+.accountWrapper {
+  display: initial;
+
+  iframe {
+    width: 100% !important;
+    min-height: 800px !important;
+  }
+}

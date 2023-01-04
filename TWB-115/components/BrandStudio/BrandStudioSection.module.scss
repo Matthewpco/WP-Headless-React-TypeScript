@@ -1,0 +1,120 @@
+@import '../../styles/colors';
+@import '../../styles/media-breakpoints';
+@import '../../styles/theme';
+
+.root {
+  :global(.BrandStudioSection),
+  :global(.BrandStudioSection) > em {
+    background-color: $black;
+    color: $white;
+    display: flex;
+    overflow: hidden;
+    font-style: normal;
+
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+
+  :global(.BrandStudioSection) > em {
+    flex: 1;
+  }
+
+  :global(.BrandStudioSection--light) {
+    background-color: transparent;
+    color: $black;
+
+    @include ThemeDark {
+      color: $ebb;
+    }
+  }
+
+  :global(.BrandStudioSection__text) {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  :not(:global(.BrandStudioSection--light)) {
+    :global(.BrandStudioSection__text) {
+      @include mobile {
+        padding: 42px;
+      }
+    }
+  }
+
+  :global(.BrandStudioSection__title) {
+    font-family: 'Barlow Condensed', serif;
+    font-size: 50px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin: 180px 0 240px;
+    width: 413px;
+    text-transform: uppercase;
+    font-style: normal;
+
+    @include mobile {
+      font-size: 35px;
+      margin: 0;
+      width: auto;
+    }
+  }
+
+  :global(.BrandStudioSection__image) {
+    margin: 0;
+
+    img {
+      clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0% 100%);
+      display: block;
+      height: 100%;
+      object-fit: cover;
+
+      @include mobile {
+        clip-path: none;
+        object-fit: unset;
+        height: auto;
+        width: 100%;
+      }
+    }
+  }
+
+  :global(.BrandStudioSection__text) {
+    h3:not(:global(.BrandStudioSection__title)) {
+      font-family: 'Merriweather', serif;
+      font-size: 40px;
+      font-weight: 900;
+      margin: 0 0 45px;
+      max-width: 568px;
+      text-align: left;
+
+      em {
+        font-weight: 400;
+      }
+
+      @include mobile {
+        margin-top: 59px;
+        margin-left: 41px;
+        margin-bottom: 15px;
+        font-size: 25px;
+      }
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 16px;
+      font-family: 'Proxima Nova', serif;
+      font-size: 23px;
+      max-width: 568px;
+      text-align: left;
+
+      @include mobile {
+        font-size: 17px;
+        padding-left: 53px;
+        padding-right: 4px;
+      }
+    }
+  }
+}

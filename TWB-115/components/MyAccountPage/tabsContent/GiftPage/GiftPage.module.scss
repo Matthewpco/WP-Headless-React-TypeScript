@@ -1,0 +1,161 @@
+@import '../../../../styles/colors';
+@import '../../../../styles/media-breakpoints';
+@import '../../../../styles/theme';
+
+.root {
+  font-family: Proxima Nova, serif;
+}
+
+.noSubscriptionsWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-top: 33px;
+  padding: 25px 20px;
+  background-color: $athens-gray;
+
+  @include mobile {
+    flex-direction: column;
+    margin-top: 15px;
+    padding: 15px;
+  }
+}
+
+[data-theme="dark"] .noSubscriptionsWrapper {
+  background-color: $cod-gray;
+}
+
+.noSubscriptionsLabel {
+  font-weight: 700;
+  font-size: 1.5rem;
+
+  @include mobile {
+    margin: 0 0 15px 0;
+  }
+}
+
+.subscribeButton {
+  text-transform: uppercase;
+}
+
+.cancelSubscriptionLabel {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.customerServiceLink {
+  margin-left: 5px;
+  text-decoration: underline;
+}
+
+.subscriptionTable {
+  color: $silver;
+  border-collapse: collapse;
+  width: 100%;
+
+  & td {
+    padding: 20px;
+  }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid $silver;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      @include mobile {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        align-items: center;
+      }
+    }
+
+    tr:first-child {
+      border-top: 1px solid $silver;
+    }
+
+    & td:first-child {
+      padding: 0 0 0 10px;
+
+      @include mobile {
+        width: 15%;
+      }
+    }
+
+    & td:nth-child(2) {
+      padding: 0;
+
+      @include mobile {
+        width: 15%;
+      }
+    }
+
+    & td:nth-child(3) {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      @include mobile {
+        width: 70%;
+      }
+    }
+
+    & td:nth-child(4) {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      @include mobile {
+        width: 33%;
+      }
+    }
+
+    & td:nth-child(5) {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      @include mobile {
+        width: 33%;
+      }
+    }
+
+    & td:nth-child(6) {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      @include mobile {
+        width: 33%;
+      }
+    }
+  }
+}
+
+.buttonsContainer {
+  padding: 20px 0;
+
+  & .button {
+    color: $punch !important;
+    border: $punch 1px solid;
+    background: transparent;
+  }
+}
+
+.nextBillDateLabel {
+  font-size: 13px;
+  color: $silver;
+  min-height: 16px;
+}
+
+.nextBillDateValue {
+  font-size: 16px;
+}
+
+[data-theme="dark"] .icon path {
+  fill: $white;
+}

@@ -1,0 +1,94 @@
+@import '../../../styles/colors';
+@import '../../../styles/media-breakpoints';
+@import '../../../styles/theme';
+
+.root {
+  input:-webkit-autofill,
+  input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+  }
+}
+
+.title {
+  font-family: 'Merriweather';
+  font-weight: 700;
+  font-size: 28px;
+  margin-bottom: 30px;
+  text-align: center;
+
+  @include ThemeDark {
+    color: $ebb;
+  }
+}
+
+.subTitle {
+  font-family: 'Proxima Nova';
+  font-weight: 500;
+  font-size: 16px;
+  margin-bottom: 30px;
+  text-align: center;
+
+  @include ThemeDark {
+    color: $ebb;
+  }
+}
+
+.form  {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  margin-right: 10px;
+  max-width: 420px;
+  width: 100%;
+}
+
+.errorMessage {
+  position: absolute;
+  color: #d93831;
+  font-size: 12px;
+  font-family: 'Proxima Nova', sans-serif;
+  font-weight: 600;
+  height: 15px;
+  margin-top: 5px;
+}
+
+.input {
+  height: 36px;
+  background-color: transparent !important;
+  margin: 0;
+  width: 100%;
+  border: 0.5px solid $alto;
+  border-radius: 6px;
+  font-family: 'Proxima Nova', sans-serif;
+  padding-left: 12px;
+
+  @include ThemeDark {
+    color: $ebb;
+  }
+}
+
+
+.input::placeholder {
+  font-size: 14px;
+  font-family: 'Proxima Nova', sans-serif;
+  @include ThemeDark {
+    color: $ebb;
+  }
+}
+
+.submitButton {
+  white-space: nowrap;
+  align-self: flex-end;
+  font-size: 14px;
+  width: 105px;
+
+  button {
+    width: 100%;
+    font-family: 'Proxima Nova', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+}

@@ -1,0 +1,16 @@
+@import '../../styles/colors';
+@import '../../styles/media-breakpoints';
+@import '../../styles/theme';
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+@include mobile {
+  .container,
+  .brandHeading {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}

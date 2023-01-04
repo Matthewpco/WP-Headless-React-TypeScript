@@ -1,0 +1,36 @@
+@import '../../styles/colors';
+@import '../../styles/media-breakpoints';
+@import '../../styles/theme';
+
+.root {
+  :global(.HubSpot) {
+    max-width: 632px;
+    padding: 78px 16px;
+    margin: 0 auto;
+    align-self: center;
+
+    @include mobile {
+      padding: 36px 16px;
+    }
+
+    &::before {
+      content: 'Ready? Let’s Get to Work';
+      color: $black;
+      font-family: 'Barlow Condensed', serif;
+      font-size: 35px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-align: center;
+      margin: 0 0 40px;
+      display: block;
+
+      @include ThemeDark {
+        color: $ebb;
+      }
+
+      @include mobile {
+        font-size: 25px;
+      }
+    }
+  }
+}

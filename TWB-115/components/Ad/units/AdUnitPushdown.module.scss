@@ -1,0 +1,37 @@
+@import '../../../styles/media-breakpoints';
+@import '../../../styles/colors';
+@import '../../../styles/theme';
+
+.pushdown {
+  min-height: 100px;
+  max-height: 400px;
+  height: 400px;
+
+  @include mobile {
+    min-height: 150px;
+    max-height: 512px;
+    height: 512px;
+  }
+
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 150;
+  color: $dusty-gray;
+  background: $white;
+
+  @include ThemeDark {
+    background-color: $mine-shaft;
+  }
+
+  &:after {
+    content: 'Advertisement';
+    display: block;
+    font-size: 0.7rem;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

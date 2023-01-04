@@ -1,0 +1,23 @@
+@import '../../styles/colors';
+@import '../../styles/media-breakpoints';
+@import '../../styles/theme';
+
+.root {
+  border: 1px solid $athens-gray;
+  padding: 16px 16px 4px;
+
+  @include mobile {
+    border-left: 0;
+    border-right: 0;
+    padding-right: 0;
+  }
+}
+
+.title {
+  color: $gray-2;
+  font-family: 'Proxima Nova', serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin: 0;
+}

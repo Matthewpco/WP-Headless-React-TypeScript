@@ -1,0 +1,61 @@
+@import "../../styles/colors";
+@import "../../styles/theme";
+
+.root {
+  background-color: transparent;
+  border: 1px solid $athens-gray;
+  border-radius: 51px;
+  cursor: pointer;
+  height: 30px;
+  padding: 0;
+  position: relative;
+  width: 95px;
+}
+
+.highlight {
+  background-color: $black;
+  border-radius: 51px;
+  height: 30px;
+  margin-left: -1px;
+  margin-top: -1px;
+  transition: transform 0.3s ease;
+  width: 53px;
+}
+
+.icon {
+  height: 12px;
+  margin-top: 8px;
+  position: absolute;
+  top: 0;
+  transition: color 0.3s ease;
+  width: 12px;
+  z-index: 2;
+
+  @include ThemeDark {
+    color: $ebb;
+  }
+}
+
+.sun {
+  color: $black;
+  right: 20px;
+}
+
+.moon {
+  color: $white;
+  left: 20px;
+}
+
+.rootActive {
+  .highlight {
+    transform: translateX(42px);
+  }
+
+  .moon {
+    color: $black;
+  }
+
+  .sun {
+    color: $white;
+  }
+}

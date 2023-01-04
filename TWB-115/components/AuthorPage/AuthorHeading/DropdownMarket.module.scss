@@ -1,0 +1,32 @@
+@import '../../../styles/colors';
+@import '../../../styles/media-breakpoints';
+@import '../../../styles/theme';
+
+.markets {
+  z-index: 10;
+
+  svg {
+    transform: none;
+    color: $cod-gray;
+
+    @include ThemeDark {
+      color: $ebb;
+    }
+  }
+
+  & > button {
+    border: 0;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    span {
+      font-family: 'Proxima Nova', serif;
+      font-size: 11px;
+    }
+  }
+}
+
+.marketsDropdown {
+  right: 0;
+}

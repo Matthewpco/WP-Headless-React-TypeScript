@@ -1,0 +1,20 @@
+.categoryCityLabelWrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.categoryLabel,
+.cityLabel {
+  font-family: 'Proxima Nova', serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 11px;
+  align-items: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.cityLabel {
+  padding: 3px 6px;
+}

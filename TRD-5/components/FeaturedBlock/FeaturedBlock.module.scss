@@ -1,0 +1,26 @@
+@import '../../styles/colors';
+@import '../../styles/media-breakpoints';
+
+.root {
+  margin: 0;
+
+  @include mobile {
+    margin: 0 -16px;
+  }
+}
+
+.image {
+  display: block;
+  width: 100%;
+}
+
+.subtitle {
+  font-family: 'Proxima Nova', serif;
+  font-size: 13px;
+  font-style: italic;
+  margin: 4px 0 0;
+
+  @include mobile {
+    display: none;
+  }
+}

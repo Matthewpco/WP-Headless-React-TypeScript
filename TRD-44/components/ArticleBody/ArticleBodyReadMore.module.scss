@@ -1,0 +1,112 @@
+@import '../../styles/media-breakpoints';
+@import '../../styles/colors';
+@import '../../styles/theme';
+
+.root {
+  :global(.ReadMoreSection_root) {
+    border: 1px solid $athens-gray;
+    padding: 16px 16px 4px;
+
+    @include mobile {
+      border-left: 0;
+      border-right: 0;
+      padding: 0;
+    }
+  }
+
+  :global(.ReadMoreSection_title) {
+    color: $gray-2;
+    font-family: 'Proxima Nova', serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 20px;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  :global(.ReadMoreArticle_root) {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px 0;
+
+    & + :global(.ReadMoreArticle_root) {
+      border-top: 1px solid $athens-gray;
+    }
+  }
+
+  :global(.ReadMoreArticle_tileTitle) {
+    font-size: 16px;
+    flex: 1;
+
+    @include mobile {
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+
+  :global(.CategoryCityLabel_categoryCityLabelWrapper) {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  :global(.CategoryCityLabel_categoryLabel),
+  :global(.CategoryCityLabel_cityLabel) {
+    font-family: 'Proxima Nova', serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 12px;
+    align-items: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  :global(.CategoryCityLabel_cityLabel) {
+    padding: 3px 6px;
+
+    @include mobile {
+      padding: 0px;
+    }
+  }
+
+  :global(.ArticleTile_articleTile) {
+    align-items: flex-start;
+    display: flex;
+    gap: 16px;
+    flex: 1;
+    text-decoration: none;
+  }
+
+  img:global(.ArticleTile_articleTileImage):not(:global(.NoStyles)) {
+    // overrides template styles
+    flex: 0 0 115px;
+    max-width: 115px;
+    transform: none;
+
+    @include mobile {
+      flex: 0 0 104px;
+      max-width: 104px;
+    }
+  }
+
+  :global(.ArticleTile_articleTileTitle) {
+    font-family: Merriweather, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 24px;
+    text-decoration: none;
+    max-height: 98px;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+
+    @include ThemeDark {
+      color: $ebb;
+    }
+  }
+}

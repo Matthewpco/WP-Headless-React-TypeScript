@@ -1,0 +1,155 @@
+@import '../../../../styles/colors';
+@import '../../../../styles/media-breakpoints';
+@import '../../../../styles/theme';
+
+.root {
+  display: flex;
+  flex-direction: column;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  border-top: 1px solid $silver;
+  padding: 1rem 0;
+}
+
+.sectionTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.editButton {
+  background-color: $athens-gray-4;
+  border-color: $athens-gray-4;
+  border-width: 2px;
+  border-radius: 0.25rem;
+  font-weight: 700;
+  font-size: .875rem;
+  height: 40px;
+  padding: 0.4rem 1.5rem;
+
+  @include ThemeDark {
+    color: $black;
+  }
+}
+
+.sectionFieldsWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+  margin: 1rem 1rem 0;
+
+  @include tablet {
+    gap: 20px;
+  }
+
+  @include mobile {
+    grid-template-columns: none;
+  }
+}
+
+.fieldValue {
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+.fieldError {
+  color: $punch !important;
+}
+
+.fieldEdit {
+  @include ThemeDark {
+    option {
+      background: $mine-shaft;
+      color: $ebb;
+    }
+  }
+}
+
+.fieldEdit,
+.fieldError {
+  display: none;
+}
+
+.sectionField {
+  display: flex;
+}
+
+.sectionEdit {
+  .fieldValue {
+    display: none;
+  }
+
+  .fieldError,
+  .fieldEdit {
+    display: block;
+  }
+
+  .sectionField {
+    gap: 10px;
+    flex-direction: column;
+  }
+}
+
+.profileEditButtonsGroup {
+  display: flex;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  padding-top: 32px;
+  padding-bottom: 20px;
+
+  @include mobile_and_tablet {
+    order: 1;
+    gap: 0;
+    flex-wrap: wrap;
+    padding-top: 20px;
+  }
+}
+
+.button {
+  flex: 1;
+  text-transform: uppercase;
+
+  @include ThemeDark {
+    color: $white;
+  }
+
+  @include tablet {
+    flex: none;
+    width: 49.5%;
+  }
+
+  @include mobile {
+    width: 100%;
+    flex: none;
+    margin-bottom: 10px;
+  }
+}
+
+.button:first-child {
+  margin-right: 5px;
+}
+
+.resetButton {
+  @include tablet {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+[data-theme="light"] .button {
+  border: $mine-shaft solid 2px;
+}
+
+[data-theme="dark"] .button {
+  border: $ebb solid 2px;
+}

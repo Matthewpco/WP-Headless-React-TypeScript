@@ -1,0 +1,20 @@
+@import '../../styles/theme.scss';
+@import '../../styles/colors.scss';
+
+.resultdata div {
+  @include ThemeDark {
+    color: $white !important;
+  }
+
+  & span {
+    @include ThemeDark {
+      color: $black !important;
+    }
+  }
+}
+
+.faceteddata a {
+  @include ThemeDark {
+    color: $white !important;
+  }
+}

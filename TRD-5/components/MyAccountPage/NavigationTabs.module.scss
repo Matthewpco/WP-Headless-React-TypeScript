@@ -1,0 +1,114 @@
+@import '../../styles/colors';
+@import '../../styles/media-breakpoints';
+@import '../../styles/theme';
+
+.root {
+  font-family: Proxima Nova, serif;
+  padding: 0;
+  width: 270px;
+
+  @include mobile_and_tablet {
+    width: 100%;
+  }
+}
+
+.navigationTabs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 32px 0 0 0;
+  padding: 0;
+
+  @include mobile_and_tablet {
+    flex-direction: row;
+    gap: 0;
+    margin: 20px 0 0 0;
+    overflow: auto;
+  }
+}
+
+.navigationTab {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+
+  @include mobile_and_tablet {
+    min-width: max-content;
+    margin-bottom: 0.8rem;
+  }
+
+  button {
+    margin: 0;
+    border: 0;
+    width: 100%;
+    font-size: 16px;
+    text-align: left;
+    background: transparent;
+    cursor: pointer;
+    padding: 8px 16px;
+
+    @include mobile_and_tablet {
+      text-align: center;
+      background-color: $seashell;
+      border: 1px solid $seashell;
+      border-bottom-color: $gray;
+      border-radius: 0;
+
+      @include ThemeDark {
+        background-color: $zambezi;
+        border: 1px solid $zambezi;
+        border-bottom-color: $gray;
+      }
+    }
+  }
+
+  [data-theme="dark"] & button {
+    color: $white;
+  }
+
+  [data-theme="light"] & button {
+    color: $cod-gray;
+  }
+
+  button:hover {
+    background-color: $alto;
+
+    @include mobile_and_tablet {
+      background-color: $white;
+    }
+  }
+
+  [data-theme="dark"] & button:hover {
+    background-color: $cod-gray;
+  }
+}
+
+.navigationTabActive {
+  button {
+    background-color: $seashell;
+    border: 0;
+    border-radius: 0.25rem;
+    font-weight: 700;
+
+    @include mobile_and_tablet {
+      background-color: $white;
+      border: 1px solid $dusty-gray-2;
+      border-bottom-color: $white;
+      border-top-left-radius: 0.25rem;
+      border-top-right-radius: 0.25rem;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+
+      @include ThemeDark {
+        border-bottom-color: $black;
+      }
+    }
+  }
+}
+
+[data-theme="dark"] .navigationTabActive {
+  button {
+    background-color: $black;
+  }
+}

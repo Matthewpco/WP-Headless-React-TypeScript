@@ -1,0 +1,247 @@
+@import '../../../../styles/colors';
+@import '../../../../styles/media-breakpoints';
+@import '../../../../styles/theme';
+
+.root {
+  border: 3px solid $punch;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 50px;
+
+  @include mobile_and_tablet {
+    border-radius: 0px;
+  }
+}
+
+.title {
+  font-family: 'Merriweather', sans-serif;
+  font-weight: 700;
+  font-size: 21px;
+  color: $cod-gray;
+  text-align: center;
+  transform: translateY(+35px);
+  background-color: $white;
+  width: 200px;
+  margin: 0 auto;
+
+  @include ThemeDark {
+    color: $ebb;
+    background-color: $mine-shaft;
+  }
+
+  @include mobile {
+    white-space: nowrap;
+    transform: translateY(+15px);
+    width: 320px;
+  }
+}
+
+.subTitle {
+  font-family: 'Proxima Nova';
+  font-weight: 400;
+  font-size: 16px;
+  color: $black;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 25px;
+
+  @include ThemeDark {
+    color: $ebb;
+  }
+}
+
+.form  {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+.formCheckbox {
+  flex-direction: column;
+
+  ul {
+    margin-top: 40px;
+    padding: 0;
+  }
+
+  li {
+    list-style-type: none;
+    font-family: 'Proxima Nova';
+    font-weight: 400;
+    font-size: 15px;
+    color: $black;
+    margin-bottom: 12px;
+
+    @include ThemeDark {
+      color: $ebb;
+    }
+  }
+}
+
+.container {
+  margin-right: 10px;
+  max-width: 420px;
+  width: 100%;
+
+  @include mobile {
+    margin-right: 0;
+  }
+}
+
+.errorMessage {
+  position: absolute;
+  color: #d93831;
+  font-size: 12px;
+  font-family: 'Proxima Nova', sans-serif;
+  font-weight: 600;
+  height: 15px;
+  margin-top: 5px;
+}
+
+.input {
+  height: 36px;
+  background-color: transparent !important;
+  margin: 0;
+  width: 100%;
+  border: 0.5px solid $alto;
+  border-radius: 6px;
+  font-family: 'Proxima Nova', sans-serif;
+  padding-left: 12px;
+
+  @include ThemeDark {
+    color: $ebb;
+  }
+
+  @include mobile {
+    border-radius: 0;
+  }
+}
+
+
+.input::placeholder {
+  font-size: 14px;
+  font-family: 'Proxima Nova', sans-serif;
+  @include ThemeDark {
+    color: $ebb;
+  }
+}
+.submitButton {
+  white-space: nowrap;
+  font-family: 'Proxima Nova', sans-serif;
+
+  @include mobile {
+    border-radius: 0;
+    background-color: $concrete;
+    color: $cod-gray;
+  }
+}
+
+.message {
+  z-index: 11;
+  position: fixed;
+  background: $white;
+  left: 50%;
+  top: 20%;
+  transform: translate(-50%);
+  box-shadow: 3px 4px 20px 4px rgb(0 0 0 / 25%);
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  font-size: 20px;
+  align-items: center;
+  border-radius: 5px;
+  font-family: 'Proxima Nova', sans-serif;
+
+  svg {
+    margin-left: 20px;
+  }
+
+  @include ThemeDark {
+    background-color: $zambezi;
+  }
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  border: solid 1px $punch;
+  padding: 1px;
+  background-color: transparent;
+  cursor: pointer;
+  margin-right: 13px;
+
+  svg {
+    display: none;
+    margin: auto;
+  }
+}
+
+.chosenCheckbox {
+  background-color: $punch;
+
+  svg {
+    display: block;
+  }
+}
+
+.linkNewsletter {
+  font-size: 11px;
+  font-family: 'Proxima Nova', sans-serif;
+  color: $black;
+  text-align: center;
+  text-decoration: underline;
+  text-transform: uppercase;
+  margin-top: 16px;
+
+  @include ThemeDark {
+      color: $ebb;
+  }
+}
+
+.description {
+  font-family: 'Proxima Nova';
+  font-weight: 400;
+  font-size: 11px;
+  text-align: center;
+  color: $silver-chalice;
+  margin-top: 16px;
+}
+
+@include tablet{
+  .root{
+    border-radius: 0px;
+  }
+
+  .form {
+    flex-direction: column;
+    gap:10px;
+    margin-top: 20px;
+  }
+
+  .title {
+    font-size: 17px;
+    width: 85%
+  }
+
+  .submitButton {
+    height: 40px;
+    color: $cod-gray;
+    background-color: $concrete;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  .input {
+    height: 40px;
+    border-radius: 0px;
+  }
+
+  .input::placeholder {
+    font-size: 11px;
+    text-transform: uppercase;
+  }
+}

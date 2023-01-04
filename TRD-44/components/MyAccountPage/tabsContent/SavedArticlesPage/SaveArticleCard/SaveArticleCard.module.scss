@@ -1,0 +1,94 @@
+@import '../../../../../styles/colors.scss';
+@import '../../../../../styles/theme.scss';
+@import '../../../../../styles/media-breakpoints.scss';
+
+.article {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  gap: 10px;
+
+  .articleInfo {
+    display: flex;
+    gap: 30px;
+    cursor: pointer;
+
+    @include mobile {
+      gap: 15px;
+    }
+
+    .articleImage {
+      flex: 0 0 139px;
+      height: 87px;
+      object-fit: cover;
+      overflow: hidden;
+
+      @include mobile {
+        flex: 0 0 104px;
+        height: 65px;
+      }
+    }
+
+    .articleDate {
+      font-family: 'Merriweather', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 11px;
+      text-transform: uppercase;
+      color: $silver-chalice-2;
+      margin: 0 0 12px 0;
+
+      @include mobile {
+        margin: 0 0 5px 0;
+      }
+    }
+
+    .articleText {
+      font-family: 'Merriweather', serif;
+      font-weight: 700;
+      font-size: 20px;
+      color: $mine-shaft-2;
+      margin: 0;
+
+      @include ThemeDark {
+        color: $white;
+      }
+
+      @include mobile {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .articleIcon {
+    cursor: pointer;
+    flex: 0 0 16px;
+  }
+
+  .message {
+    z-index: 11;
+    position: fixed;
+    background: $white;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%);
+    box-shadow: 3px 4px 20px 4px rgb(0 0 0 / 25%);
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    font-size: 20px;
+    align-items: center;
+    border-radius: 5px;
+    font-family: 'Proxima Nova', sans-serif;
+
+    svg {
+      margin-left: 20px;
+    }
+
+    @include ThemeDark {
+      background-color: $zambezi;
+    }
+  }
+}

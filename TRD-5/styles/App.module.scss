@@ -1,0 +1,20 @@
+@import 'colors';
+@import 'theme';
+
+.root {
+  color: $cod-gray;
+
+  @include ThemeDark {
+    color: $ebb;
+    background-color: $mine-shaft;
+  }
+
+  :global(.header) {
+    background: transparent;
+    border: none;
+  }
+
+  :global(.headerHidden) {
+    opacity: 0;
+  }
+}

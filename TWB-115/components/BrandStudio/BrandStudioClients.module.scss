@@ -1,0 +1,48 @@
+@import '../../styles/colors';
+@import '../../styles/media-breakpoints';
+@import '../../styles/theme';
+
+.root {
+  :global(.BrandStudioClients) {
+    background: $black;
+    color: $white;
+    padding: 78px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include mobile {
+      padding: 51px 0 89px;
+    }
+  }
+
+  :global(.BrandStudioClients__title) {
+    padding-bottom: 35px;
+    margin: 0 0 21px;
+    max-width: 1025px;
+    width: 100%;
+    border-bottom: 1px solid $athens-gray;
+    text-align: center;
+    font-family: 'Barlow Condensed', serif;
+    font-size: 35px;
+    letter-spacing: 1px;
+    font-weight: 800;
+
+    @include mobile {
+      font-size: 25px;
+      padding-bottom: 9px;
+      margin-bottom: 32px;
+    }
+  }
+
+  :global(.BrandStudioClients__image) {
+    width: 100%;
+    max-width: 1408px;
+    margin: 0;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+}

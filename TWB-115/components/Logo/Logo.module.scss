@@ -1,0 +1,19 @@
+@import '../../styles/media-breakpoints';
+
+.logoImage {
+  display: block;
+  height: 50px;
+
+  &.shrink {
+    height: 33.333px;
+  }
+
+  @include mobile {
+    margin: 5px 35px 0 0;
+
+    &,
+    &.shrink {
+      height: 30px;
+    }
+  }
+}

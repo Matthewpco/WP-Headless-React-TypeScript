@@ -1,0 +1,35 @@
+@import '../../styles/colors';
+@import '../../styles/theme';
+
+.articleTile {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: min-content auto;
+  margin-right: 15px;
+  flex: 1;
+}
+
+.articleTileImage {
+  width: auto;
+  height: 70px;
+}
+
+.articleTileTitle {
+  display: block;
+  font-family: Merriweather, serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 24px;
+  text-decoration: none;
+  max-height: 98px;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  grid-column: 2;
+
+  @include ThemeDark {
+    color: $ebb;
+  }
+}

@@ -1,0 +1,82 @@
+@import '../../styles/colors';
+@import '../../styles/media-breakpoints';
+@import '../../styles/theme';
+
+.divWrapper {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+}
+
+.sectionWrapper {
+  overflow: hidden;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.trendingArticlesWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.trendingArticlesTitle {
+  font-family: 'Proxima Nova', serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #363636;
+  margin: 0;
+
+  @include ThemeDark {
+    color: $ebb;
+  }
+}
+
+.trendingArticlesList {
+  display: flex;
+  justify-content: space-between;
+  transition: transform 0.6s;
+
+  .itemHidden {
+    display: none;
+  }
+}
+
+.buttonSlider {
+  margin: auto 0;
+  display: none;
+
+  @include tablet {
+    display: block;
+  }
+}
+
+.rightButtonSlider {
+  transform: rotate(180deg);
+  margin-right: 0;
+}
+
+.buttonSlider {
+  path {
+    transition: fill 0.3s;
+    cursor: pointer;
+  }
+
+  path:hover {
+    fill: $punch;
+  }
+}
+
+.buttonSlider[disabled] {
+  path {
+    cursor: auto;
+    fill: $athens-gray;
+  }
+}

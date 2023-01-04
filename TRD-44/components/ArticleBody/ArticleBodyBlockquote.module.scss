@@ -1,0 +1,19 @@
+@import '../../styles/media-breakpoints';
+@import '../../styles/colors';
+@import '../../styles/theme';
+
+.root {
+  :global(.blockquote) {
+    border-left: 10px solid $punch;
+    font-family: 'Merriweather', serif;
+    font-size: 1.5625em;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 32px 0;
+    padding-left: 32px;
+
+    small {
+      //
+    }
+  }
+}

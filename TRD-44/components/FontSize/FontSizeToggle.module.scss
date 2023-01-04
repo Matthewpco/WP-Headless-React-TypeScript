@@ -1,0 +1,35 @@
+@import '../../styles/colors';
+@import '../../styles/media-breakpoints';
+@import '../../styles/theme';
+
+.root {
+  border-color: $athens-gray;
+  color: $cod-gray;
+  display: none;
+  font-family: 'Proxima Nova', serif;
+  font-weight: 400;
+  height: 24px;
+  padding: 0;
+  width: 26px;
+
+  @include mobile_and_tablet {
+    display: flex;
+  }
+
+  @include ThemeDark {
+    color: $ebb;
+  }
+}
+
+
+.small {
+  font-size: 16px;
+}
+
+.medium {
+  font-size: 20px;
+}
+
+.large {
+  font-size: 24px;
+}

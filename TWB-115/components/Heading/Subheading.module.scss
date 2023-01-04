@@ -1,0 +1,12 @@
+@import '../../styles/colors';
+@import '../../styles/media-breakpoints';
+
+.root {
+  font-family: Merriweather, serif;
+  font-size: 23px;
+
+  @include mobile {
+    font-size: 16px;
+    margin: 0 0 32px;
+  }
+}

@@ -1,0 +1,5 @@
+wp_login              = "admin"
+environment           = "prod"
+wp_graphql_url        = "http://trd-news-back-end/graphql"
+piano_mode            = "production"
+piano_app_id          = "p7sVIGTDn5"

@@ -1,0 +1,26 @@
+@import '../../styles/colors';
+@import '../../styles/media-breakpoints';
+@import '../../styles/theme';
+
+.root {
+  background: transparent;
+  border: 1px solid $cornflower-blue;
+  font-weight: 700;
+  line-height: 24px;
+  margin: 0;
+  padding: 0 12px;
+  height: 36px;
+
+  &:focus,
+  &:focus-visible {
+    border-color: $cornflower-blue;
+  }
+
+  &::placeholder {
+    color: $dusty-gray;
+  }
+
+  @include ThemeDark {
+    color: $ebb;
+  }
+}

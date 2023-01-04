@@ -1,0 +1,175 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer component should have footer links 1`] = `
+<div>
+  <footer
+    class="root"
+  >
+    <div
+      class="section"
+    >
+      <button
+        class="root switchTheme rootActive"
+        type="button"
+      >
+        <div
+          class="highlight"
+        />
+        SvgMock
+        SvgMock
+      </button>
+      <nav
+        class="nav mobileNav"
+      >
+        <ul
+          class="list listMobile"
+        >
+          <li
+            class="listItem"
+          >
+            <a
+              class="listItemAnchor"
+              href="#"
+              target="_blank"
+            >
+              Home
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div
+      class="text"
+    >
+      <p
+        class="copy"
+      />
+      <address
+        class="address"
+      >
+         Phone: 
+      </address>
+    </div>
+    <nav
+      class="root"
+    >
+      <ul
+        class="list socialLinksList"
+      >
+        <li
+          class="listItem"
+        >
+          <a
+            class="listItemAnchor"
+            href="#"
+            rel="noreferrer"
+            target="_blank"
+          >
+            SvgMock
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </footer>
+</div>
+`;
+
+exports[`Footer component should have footer texts 1`] = `
+<div>
+  <footer
+    class="root"
+  >
+    <div
+      class="section"
+    >
+      <button
+        class="root switchTheme rootActive"
+        type="button"
+      >
+        <div
+          class="highlight"
+        />
+        SvgMock
+        SvgMock
+      </button>
+      <nav
+        class="nav mobileNav"
+      >
+        <ul
+          class="list listMobile"
+        />
+      </nav>
+    </div>
+    <div
+      class="text"
+    >
+      <p
+        class="copy"
+      >
+        Copyright Text
+      </p>
+      <address
+        class="address"
+      >
+        Address Text Phone: 000000000
+      </address>
+    </div>
+    <nav
+      class="root"
+    >
+      <ul
+        class="list socialLinksList"
+      />
+    </nav>
+  </footer>
+</div>
+`;
+
+exports[`Footer component should render 1`] = `
+<div>
+  <footer
+    class="root"
+  >
+    <div
+      class="section"
+    >
+      <button
+        class="root switchTheme rootActive"
+        type="button"
+      >
+        <div
+          class="highlight"
+        />
+        SvgMock
+        SvgMock
+      </button>
+      <nav
+        class="nav mobileNav"
+      >
+        <ul
+          class="list listMobile"
+        />
+      </nav>
+    </div>
+    <div
+      class="text"
+    >
+      <p
+        class="copy"
+      />
+      <address
+        class="address"
+      >
+         Phone: 
+      </address>
+    </div>
+    <nav
+      class="root"
+    >
+      <ul
+        class="list socialLinksList"
+      />
+    </nav>
+  </footer>
+</div>
+`;

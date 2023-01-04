@@ -1,0 +1,25 @@
+@import '../../styles/colors';
+@import '../../styles/media-breakpoints.scss';
+@import '../../styles/theme.scss';
+
+.root {
+  display: flex;
+  flex-direction: column;
+
+  .header {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: $mine-shaft-2;
+
+    @include ThemeDark {
+      color: $white;
+    }
+
+    @include mobile {
+      font-size: 22px;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+  }
+}

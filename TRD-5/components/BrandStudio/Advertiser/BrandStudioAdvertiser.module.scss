@@ -1,0 +1,14 @@
+@import '../../../styles/colors';
+@import '../../../styles/media-breakpoints';
+@import '../../../styles/theme';
+
+.root {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 104px 0 86px;
+
+  @include mobile {
+    padding: 44px 16px;
+  }
+}

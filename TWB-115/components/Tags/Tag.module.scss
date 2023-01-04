@@ -1,0 +1,17 @@
+@import '../../styles/colors';
+@import '../../styles/theme';
+
+.root {
+  border-color: $athens-gray;
+  transition: color .2s ease, background-color .2s ease;
+
+  &:hover {
+    background-color: $black;
+    color: $white;
+
+    @include ThemeDark {
+      background-color: $ebb;
+      color: $mine-shaft;
+    }
+  }
+}

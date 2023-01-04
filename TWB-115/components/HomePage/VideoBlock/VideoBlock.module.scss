@@ -1,0 +1,35 @@
+@import '../../../styles/colors';
+@import '../../../styles/media-breakpoints';
+@import '../../../styles/theme';
+
+.root {
+  padding: 50px;
+  overflow: hidden;
+
+  @include mobile {
+    display: none;
+  }
+
+  :global(.ac-lre-vertical-carousel-ext) :global(.ac-lre-playlist-slide-title) {
+    @include ThemeDark {
+      color: $white !important;
+    }
+  }
+
+  :global(.brand-container) :global(.ac-branding-left-text) {
+    @include ThemeDark {
+      color: $white !important;
+    }
+  }
+
+  & + h2 {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: $mine-shaft-2;
+
+    @include ThemeDark {
+      color: $white;
+    }
+  }
+}

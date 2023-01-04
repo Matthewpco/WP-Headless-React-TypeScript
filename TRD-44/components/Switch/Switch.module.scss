@@ -1,0 +1,35 @@
+@import "../../styles/colors";
+@import "../../styles/theme";
+
+.root {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: $gray-2;
+  border-radius: 46px;
+  cursor: pointer;
+  height: 17px;
+  padding: 1px;
+  width: 33px;
+}
+
+.checkBox {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  border-radius: 50%;
+  background: $white;
+  width: 15px;
+  height: 15px;
+  transition: transform .15s;
+}
+
+.checked {
+  background: $punch;
+
+  .slider {
+    transform: translateX(16px);
+  }
+}

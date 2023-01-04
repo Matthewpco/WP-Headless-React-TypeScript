@@ -1,0 +1,9 @@
+@import '../../../../styles/media-breakpoints.scss';
+
+.root {
+  padding: 20px 30px;
+
+  @include mobile {
+    padding: 0;
+  }
+}

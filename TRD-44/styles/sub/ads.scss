@@ -1,0 +1,28 @@
+.trd-ad {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+  overflow: hidden;
+  text-align: center;
+}
+
+.trd-ad-center {
+  justify-content: center;
+}
+
+.aside-ad .trd-ad:first-of-type {
+  margin-top: 0;
+}
+
+@for $i from 3 through 10 {
+  .single-aside.single-aside-#{$i}:not(:empty) {
+    flex: 1;
+    margin-bottom: 20px;
+
+    .aside-ad {
+      position: sticky;
+      top: 140px;
+    }
+  }
+}

@@ -1,0 +1,5 @@
+wp_login              = "admin"
+environment           = "stg"
+wp_graphql_url        = "http://trd-news-back-end/graphql"
+piano_mode            = "sandbox"
+piano_app_id          = "yVAGWJfOMP"

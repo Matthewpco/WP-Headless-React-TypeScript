@@ -1,0 +1,10 @@
+@import '../../styles/colors';
+@import '../../styles/media-breakpoints';
+@import '../../styles/theme';
+
+.description,
+.categoryCityLabel > div:first-child {
+  @include mobile {
+    display: none;
+  }
+}

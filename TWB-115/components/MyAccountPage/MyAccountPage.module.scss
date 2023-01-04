@@ -1,0 +1,54 @@
+@import '../../styles/colors';
+@import '../../styles/media-breakpoints';
+@import '../../styles/theme';
+
+.root {
+  padding-top: 40px;
+  max-width: 1296px;
+
+  @include tablet {
+    padding-top: 30px;
+  }
+
+  @include mobile {
+    padding: 15px;
+  }
+
+  [data-theme="dark"] & *:not(button) {
+    color: $white;
+  }
+
+  [data-theme="light"] & *:not(button) {
+    color: $cod-gray;
+  }
+}
+
+.hiddenContent {
+  display: none;
+}
+
+.accountName {
+  font-family: 'Barlow Condensed', serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  margin: 0;
+}
+
+.accountBody {
+  display: flex;
+  gap: 20px;
+  margin-top: 25px;
+  border-top: 1px solid $tundora;
+  height: fit-content;
+  min-height: 800px;
+
+  @include mobile_and_tablet {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+}
+
+.accountContent {
+  flex: 1;
+}

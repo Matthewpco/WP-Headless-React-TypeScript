@@ -1,0 +1,35 @@
+@import '../../styles/colors';
+@import '../../styles/media-breakpoints';
+@import '../../styles/theme';
+
+.root {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  color: $mine-shaft-2;
+  font-family: Merriweather, serif;
+  font-weight: 700;
+  font-size: 28px;
+  margin: 45px 0 50px;
+
+  @include mobile {
+    font-size: 20px;
+    margin: 20px 0 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid $athens-gray;
+  }
+
+  @include ThemeDark {
+    color: $ebb;
+  }
+}
+
+@include mobile {
+  .title,
+  .content {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}

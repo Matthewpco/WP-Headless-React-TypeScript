@@ -1,0 +1,48 @@
+@import '../../styles/colors';
+@import '../../styles/media-breakpoints';
+@import '../../styles/theme';
+
+.root {
+  :global(.BrandStudioHeading) {
+    align-items: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 101px 0 267px;
+
+    @include mobile {
+      padding: 35px 0 63px;
+    }
+  }
+
+  :global(.BrandStudioHeading__logo) {
+    max-width: 262px;
+    margin-bottom: 49px;
+
+    @include mobile {
+      max-width: 179px;
+      margin-bottom: 39px;
+    }
+  }
+
+  :global(.BrandStudioHeading__content) {
+    h1 {
+      color: $white;
+      font-family: 'Merriweather', serif;
+      font-size: 55px;
+      font-weight: bold;
+      margin: 0;
+      max-width: 787px;
+      text-align: center;
+
+      @include mobile {
+        font-size: 30px;
+      }
+    }
+
+    em {
+      font-weight: 400;
+    }
+  }
+}

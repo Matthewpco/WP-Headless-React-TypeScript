@@ -1,0 +1,96 @@
+@import '../../../styles/colors';
+@import '../../../styles/media-breakpoints';
+@import '../../../styles/theme';
+
+.root {
+  border-bottom: 1px solid $mercury-3;
+  margin-bottom: 71px;
+
+  @include mobile {
+    margin-bottom: 0;
+  }
+}
+
+.title {
+  color: $black;
+  font-family: 'Proxima Nova', serif;
+  font-size: 23px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+
+  @include ThemeDark {
+    color: $white;
+  }
+}
+
+.slider {
+  //
+
+  :global(.slick-slide) {
+  }
+}
+
+.item {
+  //
+}
+
+.inner {
+  border-radius: 8px;
+  box-shadow: 3px 4px 17px 4px #8c8c8c40;
+  margin: 52px 22px 72px;
+  overflow: hidden;
+}
+
+.itemHeader {
+  display: flex;
+  gap: 8px;
+  padding: 46px 41px 0;
+
+  svg {
+    height: 33.74px;
+    width: 25.26px;
+  }
+}
+
+.itemDesc {
+  color: $black;
+  font-family: 'Merriweather', serif;
+  font-size: 15px;
+  margin: 0;
+  padding: 24px 41px 21px;
+
+  @include ThemeDark {
+    color: $white;
+  }
+}
+
+.itemFooter {
+  background: $wild-sand;
+  font-family: 'Proxima Nova', serif;
+  font-size: 15px;
+  padding: 35px 32px 30px;
+
+  @include ThemeDark {
+    background: $cod-gray;
+  }
+}
+
+.itemName {
+  color: $black;
+  font-weight: 700;
+  margin: 0 0 5px;
+
+  @include ThemeDark {
+    color: $white;
+  }
+}
+
+.itemCompany {
+  color: $gray-2;
+  margin: 0;
+
+  @include ThemeDark {
+    color: $ebb;
+  }
+}

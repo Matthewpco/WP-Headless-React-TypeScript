@@ -1,0 +1,23 @@
+.root {
+  max-width: 100%;
+
+  :global(.slick-arrow) {
+    z-index: 2;
+  }
+
+  :global(.slick-prev) {
+    left: 0;
+  }
+
+  :global(.slick-next) {
+    right: 0;
+  }
+}
+
+.slider {
+  width: 100%;
+}
+
+.image {
+  width: 100%;
+}

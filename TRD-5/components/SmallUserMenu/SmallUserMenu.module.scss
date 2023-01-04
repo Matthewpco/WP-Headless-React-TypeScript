@@ -1,0 +1,165 @@
+@import '../../styles/colors.scss';
+@import '../../styles/media-breakpoints.scss';
+@import '../../styles/theme.scss';
+
+.hideMenu {
+  display: none;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 45px;
+  right: 5px;
+  z-index: 100;
+  width: 400px;
+  background: $white;
+  box-shadow: 3px 4px 20px $black;
+  border-radius: 4px;
+  padding: 20px;
+  max-height: calc(100vh - 100px);
+  overflow: auto;
+
+  @include ThemeDark {
+    background: $mine-shaft;
+  }
+
+  @include mobile {
+    border-radius: 0;
+    right: 0;
+    top: 60px;
+    width: 100%;
+  }
+
+  .menuArrow {
+    position: absolute;
+    top: -12px;
+    right: 80px;
+    transform: rotate(180deg);
+    width: 22px;
+    height: 14px;
+    color: $white;
+
+    @include ThemeDark {
+      color: $mine-shaft;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  .menuCross {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+  }
+
+  .menuHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid $mercury-2;
+  }
+
+  .menuHeaderText {
+    font-family: 'Barlow Semi Condensed', serif;
+    font-weight: 600;
+    font-size: 21px;
+    letter-spacing: 0.25px;
+    text-transform: uppercase;
+    color: $black;
+    margin: 10px 0;
+    width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    justify-content: center;
+
+    @include ThemeDark {
+      color: $ebb;
+    }
+  }
+
+  .subscription {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid $mercury-2;
+
+    .subscriptionText {
+      margin: 15px 0;
+      font-family: 'Proxima Nova', serif;
+      font-weight: 700;
+      font-size: 15px;
+      color: $mine-shaft-2;
+      text-align: center;
+
+      @include ThemeDark {
+        color: $ebb;
+      }
+    }
+
+    .subscriptionButton {
+      font-family: 'Barlow Condensed', serif;
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: $white;
+      margin-bottom: 15px;
+      padding: 6px 20px;
+      height: 36px;
+    }
+  }
+
+  .menuList {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid $mercury-2;
+    padding: 20px 0;
+
+    & a {
+      font-family: 'Proxima Nova', serif;
+      font-weight: 400;
+      font-size: 15px;
+      color: $mine-shaft-2;
+
+      @include ThemeDark {
+        color: $ebb;
+      }
+    }
+
+    & a:nth-child(odd) {
+      border-right: 1px solid $mercury-2;
+    }
+
+    & a:nth-child(even) {
+      margin-left: 35px;
+
+      @include mobile {
+        margin-left: 21px;
+      }
+    }
+  }
+
+  .switchContainer {
+    padding: 20px 0;
+    border-bottom: 1px solid $mercury-2;
+  }
+
+  .signOutButton {
+    font-family: 'Barlow Condensed', serif;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: $mine-shaft-2;
+    margin-top: 10px;
+
+    @include ThemeDark {
+      color: $ebb;
+    }
+  }
+}

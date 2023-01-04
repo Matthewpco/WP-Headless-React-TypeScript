@@ -1,0 +1,45 @@
+@import '../../styles/colors';
+@import '../../styles/media-breakpoints';
+@import '../../styles/theme';
+
+.root {
+  overflow: hidden;
+}
+
+.container {
+  display: grid;
+  grid-column-gap: 64px;
+  grid-template-columns: [center-start] auto [center-end right-start] 294px [right-end];
+
+  @include mobile_and_tablet {
+    grid-template-columns: [center-start right-start] auto [center-end right-end];
+  }
+}
+
+.center {
+  grid-column: center-start / center-end;
+  outline: none;
+
+  div {
+    outline: none;
+  }
+}
+
+.right {
+  grid-column: right-start / right-end;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @include mobile_and_tablet {
+    display: none;
+  }
+}
+
+@include mobile {
+  .container,
+  .authorHeading {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}

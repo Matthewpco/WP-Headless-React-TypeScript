@@ -1,0 +1,74 @@
+@import '../../styles/colors';
+@import '../../styles/media-breakpoints';
+@import '../../styles/theme';
+
+.root {
+  //
+}
+
+.sectors {
+  padding: 0 25px;
+
+  :global(.slick-prev):before,
+  :global(.slick-next):before {
+    color: $black;
+  }
+}
+
+.sector {
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 12px;
+}
+
+.sectorActive {
+  background: $punch;
+  color: $white;
+}
+
+.posts {
+  margin-top: 25px;
+
+  :global(.slick-slider) {
+    padding-bottom: 40px;
+  }
+
+  :global(.slick-prev):before,
+  :global(.slick-next):before {
+    color: $black;
+  }
+
+  :global(.slick-prev),
+  :global(.slick-next) {
+    bottom: 0;
+    top: auto;
+  }
+
+  :global(.slick-prev) {
+    left: auto;
+    right: 50%;
+  }
+  :global(.slick-next) {
+    left: 50%;
+    right: auto;
+  }
+}
+
+.post {
+  max-width: 317px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.postImage {
+  display: block;
+  max-width: 100%;
+}
+
+.categoryCityLabel {
+  margin: 16px 0;
+}
+
+.postTitle {
+  margin: 0;
+}
