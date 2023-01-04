@@ -1,0 +1,12 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.label {
+  font-family: 'Merriweather', serif;
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0;
+}

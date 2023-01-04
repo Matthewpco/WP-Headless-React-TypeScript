@@ -1,0 +1,162 @@
+@import '../../styles/colors';
+@import '../../styles/media-breakpoints';
+@import '../../styles/theme';
+
+.root {
+  font-family: 'Proxima Nova', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.expanded {
+  .columnItems {
+    max-height: none;
+  }
+}
+
+.header {
+  display: flex;
+  margin-bottom: 44px;
+  position: relative;
+
+  &::before {
+    content: '';
+    background: $red;
+    display: block;
+    height: 3px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: calc(50% - 1.5px);
+  }
+
+  @include mobile_and_tablet {
+    margin-bottom: 27px;
+  }
+}
+
+.headerInner {
+  display: flex;
+  gap: 20px;
+  background: $white;
+  padding-right: 15px;
+  position: relative;
+
+  @include ThemeDark {
+    background: $mine-shaft;
+  }
+}
+
+.headerImage {
+  height: 35px;
+  width: 35px;
+}
+
+.headerText {
+  font-family: 'Merriweather', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+
+  @include mobile_and_tablet {
+    font-size: 20px;
+  }
+}
+
+.grid {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 58px;
+  text-transform: uppercase;
+
+  @include mobile_and_tablet {
+    flex-wrap: wrap;
+    gap: 42px 10px;
+    margin-bottom: 41px;
+  }
+}
+
+.column {
+  flex: 1;
+
+  @at-root .footerLink,
+    &:first-child {
+    flex: 1.154069;
+  }
+
+  &:last-child {
+    flex: 0.529069;
+  }
+
+  @include mobile_and_tablet {
+    &,
+    &:last-child {
+      flex: 0 0 calc(50% - 5px);
+    }
+  }
+}
+
+.footerLink {
+  @include mobile_and_tablet {
+    text-align: center;
+  }
+}
+
+.columnHeader {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 26px;
+  white-space: nowrap;
+
+  @include mobile_and_tablet {
+    font-size: 15px;
+    margin-bottom: 12px;
+    min-height: 44px;
+  }
+}
+
+.columnItems {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-height: 64px;
+  overflow: hidden;
+
+  @include mobile_and_tablet {
+    font-size: 15px;
+  }
+}
+
+.footer {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+
+  @include mobile_and_tablet {
+    align-items: normal;
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+
+.expand {
+  cursor: pointer;
+  display: inline-block;
+  letter-spacing: 0.5px;
+  position: relative;
+
+  &:after {
+    background-color: currentColor;
+    bottom: 0.5px;
+    content: '';
+    display: block;
+    height: 0.5px;
+    left: 0;
+    position: absolute;
+    right: 0;
+  }
+}
+
+.form {
+  flex: 2.529069;
+}

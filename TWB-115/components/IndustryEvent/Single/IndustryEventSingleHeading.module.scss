@@ -1,0 +1,80 @@
+@import '../../../styles/colors';
+@import '../../../styles/media-breakpoints';
+@import '../../../styles/theme';
+
+.root {
+  border-bottom: 1px solid $athens-gray;
+  color: $black;
+  display: flex;
+  gap: 32px;
+  margin-bottom: 70px;
+  padding: 38px 0 70px;
+
+  @include mobile {
+    flex-direction: column;
+    padding: 28px 0 0;
+  }
+
+  @include ThemeDark {
+    color: $ebb;
+  }
+}
+
+.content {
+  flex: 1;
+}
+
+.title {
+  font-family: 'Merriweather', serif;
+  font-size: 39px;
+  font-weight: 900;
+  margin: 0 0 37px;
+
+  @include mobile {
+    font-size: 26px;
+  }
+}
+
+.date {
+  font-family: 'Proxima Nova', serif;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.dateItem {
+  color: inherit;
+  font-family: inherit;
+  font-style: normal;
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+  text-transform: none;
+  display: inline;
+}
+
+.address {
+  font-family: 'Proxima Nova', serif;
+  font-size: 17px;
+  font-weight: 500;
+  font-style: normal;
+  margin-bottom: 20px;
+
+  p {
+    margin: 0;
+  }
+}
+
+.excerpt {
+  margin: 40px 0 23px;
+}
+
+.figure {
+  margin: 0;
+  max-width: 624px;
+  flex: 0 0 50%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+}

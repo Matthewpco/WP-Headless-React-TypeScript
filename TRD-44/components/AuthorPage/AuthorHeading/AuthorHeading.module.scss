@@ -1,0 +1,185 @@
+@import '../../../styles/colors';
+@import '../../../styles/media-breakpoints';
+@import '../../../styles/theme';
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 52px 0 16px;
+  border-bottom: 1px solid $athens-gray;
+  margin-bottom: 32px;
+
+  @include mobile_and_tablet {
+    padding: 30px 0;
+    margin-bottom: 30px;
+  }
+}
+
+.container {
+  align-items: center;
+  display: flex;
+}
+
+.avatar {
+  border-radius: 50%;
+  flex: 0 0 36px;
+  height: 36px;
+
+  @include mobile_and_tablet {
+    flex: 0 0 24px;
+    height: 24px;
+  }
+}
+
+.name {
+  color: $mine-shaft-2;
+  font-family: 'Merriweather', serif;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 64px 0 0;
+
+  @include mobile_and_tablet {
+    font-size: 22px;
+    margin: 0;
+  }
+
+  @include ThemeDark {
+    color: $ebb;
+  }
+}
+
+.socialLinks {
+  ul {
+    gap: 5px;
+  }
+}
+
+.contactButton {
+  border-color: $athens-gray;
+  color: $cod-gray;
+  font-family: 'Proxima Nova', serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0;
+  margin-left: 32px;
+  padding: 0 10px;
+
+  @include ThemeDark {
+    color: $ebb;
+  }
+}
+
+.contactButtonIcon {
+  color: $cod-gray;
+
+  @include ThemeDark {
+    color: $ebb;
+  }
+}
+
+.contactButtonText {
+  @include mobile_and_tablet {
+    display: none;
+  }
+}
+
+.desc {
+  color: $black;
+  font-family: 'Proxima Nova', serif;
+  margin: 0;
+
+  @include mobile_and_tablet {
+    display: none;
+  }
+
+  @include ThemeDark {
+    color: $ebb;
+  }
+}
+
+.markets {
+  margin-left: auto;
+}
+
+.profileInfo {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+
+  @include mobile_and_tablet {
+    gap: 8px;
+  }
+}
+
+.block {
+  align-items: center;
+  display: flex;
+
+  @include mobile_and_tablet {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+.blockLeft {
+  @include mobile_and_tablet {
+    align-items: flex-start;
+  }
+}
+
+.blockRight {
+  flex: 1;
+
+  @include mobile_and_tablet {
+    align-items: flex-end;
+    flex-direction: column-reverse;
+  }
+}
+
+
+.shadowBlock {
+  display: none;
+  background: transparent;
+  pointer-events: none;
+  transition: background .3s;
+}
+
+.shadowOpen {
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba($black, .3);
+  pointer-events: all;
+}
+
+.formToAuthorOpen {
+  background: white;
+  z-index: 11;
+  position: fixed;
+  pointer-events: all;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  padding: 30px 50px;
+  gap: 14px;
+  max-width: 600px;
+  min-width: 320px;
+  width: 100%;
+  padding-top: 0;
+
+  @include mobile {
+    max-width: 322px;
+  }
+
+  @include ThemeDark {
+    background-color: $zambezi;
+  }
+}
+
+

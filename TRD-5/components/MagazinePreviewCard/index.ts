@@ -1,0 +1,1 @@
+export { MagazinePreviewCard } from './MagazinePreviewCard';

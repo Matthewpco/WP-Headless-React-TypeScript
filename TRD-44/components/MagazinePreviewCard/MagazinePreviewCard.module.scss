@@ -1,0 +1,135 @@
+@import '../../styles/colors';
+@import '../../styles/theme';
+@import '../../styles/media-breakpoints.scss';
+
+.card {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 76px;
+  padding: 0 5px;
+  width: 25%;
+  max-width: 256px;
+
+  @include mobile {
+    align-items: normal;
+    flex-direction: row;
+    gap: 15px;
+    margin-bottom: 40px;
+    padding: 0 16px;
+    width: 100%;
+    max-width: none;
+  }
+
+  img {
+    flex: 0 0 354px;
+    object-fit: cover;
+    overflow: hidden;
+    width: 256px;
+
+    @include tablet {
+      flex: 0 0 230px;
+      width: 152px;
+      object-fit: cover;
+      overflow: hidden;
+    }
+
+    @include mobile {
+      flex: 0 0 120px;
+      height: 164px;
+      object-fit: cover;
+      overflow: hidden;
+    }
+  }
+
+  .cardInfo {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+
+    @include mobile {
+      align-items: normal;
+    }
+  }
+
+  .cardTitle {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-size: 21px;
+    text-align: center;
+    color: $cod-gray;
+    margin-top: 32px;
+    margin-bottom: 7px;
+
+    @include ThemeDark {
+      color: $white;
+    }
+
+    @include tablet {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+
+    @include mobile {
+      margin-top: 0;
+      font-size: 18px;
+      text-align: left;
+    }
+  }
+
+  .cardText {
+    font-family: 'Merriweather', serif;
+    font-style: italic;
+    text-align: center;
+    font-weight: 400;
+    font-size: 11px;
+    color: $silver-chalice-2;
+    margin-top: 0;
+    margin-bottom: 32px;
+
+    @include tablet {
+      margin-bottom: 20px;
+    }
+
+    @include mobile {
+      margin-bottom: 0;
+      text-align: left;
+    }
+  }
+
+  .buttons {
+    display: flex;
+    margin-top: auto;
+  }
+
+  .cardButton {
+    flex: 1;
+    height: 36px;
+    background: $athens-gray-3;
+    border: none;
+    font-family: 'Abel', serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: $cod-gray;
+    display: inline-block;
+    text-align: center;
+    padding: 5px;
+
+    @include tablet {
+      width: 79px;
+    }
+
+    @include mobile {
+      width: 80px;
+      font-family: 'Proxima Nova', serif;
+      font-weight: 700;
+    }
+  }
+
+  .cardButtonBlack {
+    background: $mine-shaft-2;
+    color: $white;
+  }
+}

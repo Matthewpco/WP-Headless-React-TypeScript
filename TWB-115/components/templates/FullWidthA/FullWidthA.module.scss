@@ -1,0 +1,190 @@
+@import '../../../styles/colors';
+@import '../../../styles/media-breakpoints';
+@import '../../../styles/theme';
+
+.root {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1264px + (2 * 16px);
+  padding: 0 16px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: [left-start] 224px [left-end center-start] auto [center-end] 150px [right-end];
+
+  @include mobile_and_tablet {
+    grid-template-columns: [left-start center-start right-start] auto [left-end center-end right-end];
+  }
+
+  :global(.size-full) {
+    max-width: 1296px;
+    margin-left: -224px;
+    margin-right: -150px;
+
+    @include mobile_and_tablet {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}
+
+.full {
+  grid-column: left-start / right-end;
+}
+
+.left {
+  grid-column: left-start / left-end;
+}
+
+.center {
+  grid-column: center-start / center-end;
+}
+
+.right {
+  grid-column: right-start / right-end;
+}
+
+.trendingArticles {
+  border-bottom: 1px solid $athens-gray;
+  margin: 48px 0;
+  padding-bottom: 32px;
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.afterTrend {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 37px;
+
+  @include mobile_and_tablet {
+    margin: 22px 0;
+  }
+}
+
+.articleUtils {
+  display: none;
+
+  @include mobile {
+    display: flex;
+  }
+}
+
+.featuredBlock {
+  grid-row: 3;
+
+  @include mobile_and_tablet {
+    grid-row: 2;
+  }
+
+  @include mobile {
+    grid-row: 3;
+  }
+}
+
+.headings {
+  align-self: flex-end;
+  background: linear-gradient(180deg,
+      rgba(17, 16, 16, 0) 0%,
+      rgba(17, 16, 16, 0.48) 40.1%);
+  color: $white;
+  grid-column: left-start / right-end;
+  grid-row: 3;
+  padding: 200px 80px 60px;
+
+  @include mobile_and_tablet {
+    grid-row: 2;
+  }
+
+  @include mobile {
+    background: transparent;
+    color: $cod-gray;
+    grid-row: 2;
+    padding: 0;
+  }
+}
+
+.heading {
+  margin-top: 0;
+}
+
+.actionButtons {
+  display: flex;
+  align-items: center;
+  margin: 30px 0 23px;
+
+  .message {
+    z-index: 11;
+    position: fixed;
+    background: $white;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%);
+    box-shadow: 3px 4px 20px 4px rgb(0 0 0 / 25%);
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    font-size: 20px;
+    align-items: center;
+    border-radius: 5px;
+    font-family: 'Proxima Nova', sans-serif;
+
+    svg {
+      margin-left: 20px;
+    }
+
+    @include ThemeDark {
+      background-color: $zambezi;
+    }
+  }
+
+  .verticalBorder {
+    margin: 0 20px 0 20px;
+    min-height: 100%;
+    border-right: 1px solid $mercury-4;
+  }
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.authors {
+  margin-bottom: 22px;
+}
+
+.publishedDate {
+  margin-bottom: 34px;
+
+  @include mobile {
+    grid-row: 4;
+    margin: 24px 0 11px;
+  }
+}
+
+.tags {
+  margin-bottom: 26px;
+}
+
+.newsletterSmall {
+  margin: 36px 0;
+}
+
+@include mobile {
+  .root{
+    .afterTrend,
+    .heading,
+    .subHeading,
+    .publishedDate,
+    .authors,
+    .newsletterSmall,
+    .tags,
+    .newsletter {
+      margin-left: 16px;
+      margin-right: 16px;
+    }
+  }
+}

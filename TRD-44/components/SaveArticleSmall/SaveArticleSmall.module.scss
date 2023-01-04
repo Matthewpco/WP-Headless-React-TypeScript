@@ -1,0 +1,75 @@
+@import '../../styles/colors.scss';
+@import '../../styles/theme.scss';
+@import '../../styles/media-breakpoints';
+
+.saveButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 36px;
+  width: 36px;
+  border: 1px solid $athens-gray;
+  cursor: pointer;
+  margin-left: 6px;
+
+  @include mobile {
+    height: 24px;
+    width: 26px;
+  }
+
+  .saveIcon {
+    max-height: 19px;
+    max-width: 16px;
+
+    & :global(.currentColor) {
+      stroke: $black;
+      fill: $white;
+
+      @include ThemeDark {
+        stroke: $white;
+        fill: $black;
+      }
+    }
+
+    & :global(.currentColorInner) {
+      fill: $black;
+
+      @include ThemeDark {
+        fill: $white;
+      }
+    }
+  }
+
+  .saveIconActive {
+    max-height: 19px;
+    max-width: 16px;
+
+    & :global(.currentColor) {
+      stroke: $white;
+      fill: $black;
+
+      @include ThemeDark {
+        stroke: $black;
+        fill: $white;
+      }
+    }
+
+    & :global(.currentColorInner) {
+      fill: $white;
+
+      @include ThemeDark {
+        fill: $black;
+      }
+    }
+  }
+}
+
+.saveButtonActive {
+  border: $black;
+  background-color: $black;
+
+  @include ThemeDark {
+    border: $white;
+    background-color: $white;
+  }
+}

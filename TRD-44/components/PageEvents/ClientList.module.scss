@@ -1,0 +1,60 @@
+@import '../../styles/colors';
+@import '../../styles/theme';
+@import '../../styles/media-breakpoints';
+
+.root {
+  :global(.ClientList) {
+    border-bottom: 1px solid $mercury-3;
+    margin-bottom: 63px;
+    padding-bottom: 71px;
+
+    h3 {
+      color: $cod-gray;
+      font-family: 'Merriweather', serif;
+      font-size: 28px;
+      font-weight: 700;
+      margin: 0 0 61px;
+      text-align: center;
+
+      @include mobile {
+        font-size: 22px;
+        margin-bottom: 40px;
+      }
+
+      @include ThemeDark {
+        color: $ebb;
+      }
+    }
+
+    & > div {
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 48px 60px;
+      justify-content: center;
+
+      @include mobile {
+        gap: 12px 48px;
+      }
+
+      br {
+        display: none;
+      }
+
+      & > div {
+        img {
+          display: block;
+          height: 66px;
+          width: 132px;
+          object-fit: contain;
+          object-position: center center;
+
+          @include mobile {
+            height: 58px;
+            width: 116px;
+          }
+        }
+      }
+    }
+  }
+}

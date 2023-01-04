@@ -1,0 +1,1 @@
+export { CompaniesAndPeople } from './CompaniesAndPeople';

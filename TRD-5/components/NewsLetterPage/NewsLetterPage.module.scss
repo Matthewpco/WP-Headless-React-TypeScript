@@ -1,0 +1,350 @@
+@import '../../styles/colors';
+@import '../../styles/media-breakpoints';
+@import '../../styles/theme';
+
+.root {
+  max-width: 1296px;
+  width: 100%;
+  margin: 60px auto;
+
+  @include mobile_and_tablet {
+    margin: 0;
+    width: 100%;
+  }
+
+  @include mobile {
+    padding: 10px;
+  }
+}
+
+.waitingBlock {
+  height: 1000px;
+}
+
+.heading {
+  margin-bottom: 60px;
+
+  @include tablet {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  @include mobile {
+    margin-bottom: 40px;
+  }
+
+  .title {
+    font-family: 'Merriweather', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: $black;
+    margin: 0;
+
+    @include ThemeDark {
+      color: $ebb;
+    }
+
+    @include mobile {
+      font-size: 25px;
+    }
+  }
+
+  .block {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .subTitle {
+    font-family: 'Proxima Nova', sans-serif;
+    font-size: 16px;
+    color: $black;
+    font-weight: 500;
+
+    @include ThemeDark {
+      color: $ebb;
+    }
+
+    @include mobile {
+      font-size: 16px;
+    }
+  }
+
+  .signInButton {
+    border-color: $punch;
+    color: $punch;
+    font-family: 'Proxima Nova', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    height: 40px;
+    padding: 10px 20px;
+    border: 1px solid $punch;
+    border-radius: 5px;
+    width: fit-content;
+
+    @include mobile {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      width: 100%;
+      text-align: center;
+      padding: 8px;
+    }
+
+    & a {
+      @include mobile {
+        color: $punch;
+      }
+    }
+  }
+
+  .Letter {
+    width: 86px;
+    height: 86px;
+    border-radius: 50%;
+    background-color: $punch;
+    padding: 25px 15px;
+
+    @include mobile {
+      width: 56px;
+      height: 56px;
+      padding: 12px 2px 12px 0px;
+
+      svg {
+        transform: scale(0.8);
+      }
+    }
+  }
+}
+
+.form {
+  position: relative;
+}
+
+.navigation {
+  display: flex;
+  margin-bottom: 30px;
+
+  .tabs {
+    display: flex;
+    border-bottom: 1px solid $gray-3;
+    width: 100%;
+    margin-right: 30px;
+
+    .tabsButton {
+      font-family: 'Proxima Nova', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: $gray-3;
+    }
+
+    .activeTab {
+      font-weight: 700;
+      color: $black;
+      border-bottom: 2px solid $black;
+
+      @include ThemeDark {
+        color: $ebb;
+        border-color: $ebb;
+      }
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+}
+
+.subscribeAll {
+  white-space: nowrap;
+  text-transform: uppercase;
+  font-family: 'Proxima Nova', sans-serif;
+
+  @include mobile {
+    width: 100%;
+  }
+}
+
+.subscribeToAll {
+  position: absolute;
+  top: 60px;
+  right: 30px;
+
+  @include mobile {
+    top: - 20px;
+    right: 0;
+  }
+}
+
+.unsubscribeAll {
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.titleDepart {
+  font-weight: 500;
+  font-size: 24px;
+  font-family: 'Merriweather', sans-serif;
+  color: $black;
+
+  @include ThemeDark {
+    color: $ebb;
+  }
+}
+
+.subTitleDepart {
+  font-weight: 500;
+  font-size: 16px;
+  font-family: 'Proxima Nova', sans-serif;
+  color: $black;
+
+  @include ThemeDark {
+    color: $ebb;
+  }
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+
+  @include mobile {
+    flex-direction: column;
+  }
+
+  .card {
+    width: 180px;
+    border: 1px solid $gray-3;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    padding: 16px;
+    border-radius: 5px;
+
+    @include mobile {
+      width: 100%;
+      display: flex;
+      flex-direction: row-reverse;
+      padding: 10px;
+      justify-content: flex-start;
+    }
+
+    .label {
+      font-size: 16px;
+      font-family: 'Merriweather', sans-serif;
+      color: $black;
+      font-weight: 900;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+
+      @include ThemeDark {
+        color: $ebb;
+      }
+
+      @include mobile {
+        align-items: center;
+        width: 100%;
+        margin: 0;
+      }
+    }
+
+    .image {
+      width: 90px;
+      height: 100;
+
+      @include mobile {
+        width: 40px;
+        margin-right: 20px;
+      }
+    }
+
+    .titleCheckbox {
+      font-family: 'Proxima Nova', sans-serif;
+      color: $silver-chalice;
+      font-size: 14px;
+
+      @include ThemeDark {
+        color: $ebb;
+      }
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    .checkbox {
+      width: 20px;
+      height: 20px;
+      border-radius: 3px;
+      border: solid 1px $punch;
+      padding: 1px;
+      background-color: transparent;
+      cursor: pointer;
+
+      svg {
+        display: none;
+        margin: auto;
+      }
+    }
+
+    .chosenCheckbox {
+      background-color: $punch;
+
+      svg {
+        display: block;
+      }
+    }
+  }
+}
+
+.formClosed {
+  display: none;
+  background: transparent;
+  pointer-events: none;
+  transition: background .3s;
+}
+
+.formOpened {
+  background: $white;
+  z-index: 11;
+  position: fixed;
+  pointer-events: all;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 320px;
+  width: 100%;
+  padding: 70px 10px;
+  box-shadow: 3px 4px 20px 4px rgb(0 0 0 / 25%);
+
+  @include ThemeDark {
+    background-color: $zambezi;
+  }
+}
+
+.message {
+  z-index: 11;
+  position: fixed;
+  background: $white;
+  left: 50%;
+  top: 20%;
+  transform: translate(-50%);
+  box-shadow: 3px 4px 20px 4px rgb(0 0 0 / 25%);
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  font-size: 20px;
+  align-items: center;
+  border-radius: 5px;
+  font-family: 'Proxima Nova', sans-serif;
+
+  svg {
+    margin-left: 20px;
+  }
+
+  @include ThemeDark {
+    background-color: $zambezi;
+  }
+}

@@ -1,0 +1,146 @@
+@import '../../../styles/colors';
+@import '../../../styles/media-breakpoints';
+@import '../../../styles/theme';
+
+.root {
+  input:-webkit-autofill,
+  input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+  }
+}
+
+.errorMessage {
+  color: #d93831;
+  font-size: 12px;
+  font-family: 'Proxima Nova', sans-serif;
+  font-weight: 600;
+  height: 15px;
+  margin-top: 5px;
+}
+
+.input {
+  input,
+  select {
+    height: 36px;
+  }
+
+  input,
+  textarea,
+  select {
+    background: transparent;
+    margin: 0;
+    border: 0.5px solid $alto;
+    border-radius: 6px;
+    width: 100%;
+    font-family: 'Proxima Nova', sans-serif;
+    padding-left: 12px;
+
+    @include ThemeDark {
+      color: $ebb;
+    }
+  }
+
+  input::placeholder,
+  textarea::placeholder,
+  select::placeholder {
+    font-size: 14px;
+    font-family: 'Proxima Nova', sans-serif;
+    color: $alto;
+
+    @include ThemeDark {
+      color: $ebb;
+    }
+  }
+
+  textarea::placeholder {
+    padding-top: 30px;
+  }
+
+  textarea {
+    height: 95px;
+    resize: vertical;
+  }
+
+  select {
+    @include ThemeDark {
+      background: $mine-shaft;
+    }
+  }
+}
+
+.submitButton {
+  align-self: flex-end;
+  margin-top: 14px;
+  font-size: 14px;
+
+  button {
+    width: 100%;
+    font-family: 'Proxima Nova', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+
+  @include mobile {
+    width: 100%;
+  }
+}
+
+.submitButton2 {
+  align-self: flex-start;
+  border-radius: 6px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.authorName {
+  text-align: center;
+  font-size: 24px;
+  font-family: 'Merriweather', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.25px;
+  margin-bottom: 10px;
+  color: $cod-gray;
+
+  @include mobile {
+    font-size: 18px;
+  }
+
+  @include ThemeDark {
+    color: $ebb;
+  }
+}
+
+.closeButton {
+  transform: translateX(-20px) translateY(20px);
+}
+
+.message {
+  font-family: 'Merriweather', sans-serif;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: -0.25px;
+  margin-bottom: 10px;
+  color: $cod-gray;
+
+  @include mobile {
+    font-size: 15px;
+  }
+
+  @include ThemeDark {
+    color: $ebb;
+  }
+}
+
+.thankYou {
+  font-weight: 700;
+  font-size: 24px;
+
+  @include ThemeDark {
+    color: $ebb;
+  }
+}
+
+.labelRequired {
+  color: $red;
+  user-select: none;
+}

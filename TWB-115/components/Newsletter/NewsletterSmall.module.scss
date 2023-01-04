@@ -1,0 +1,62 @@
+@import '../../styles/colors';
+@import '../../styles/media-breakpoints';
+@import '../../styles/theme';
+
+.root {
+  align-items: center;
+  border-bottom: 1px solid $swiss-coffee;
+  border-top: 1px solid $swiss-coffee;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  text-align: center;
+  position: relative;
+
+  @include ThemeDark {
+    background: rgba($athens-gray-3, 0.05);
+  }
+}
+
+.title {
+  font-family: 'Merriweather', serif;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.25px;
+  margin: 36px 0 24px;
+}
+
+.form {
+  align-self: stretch;
+  justify-content: center;
+
+  input {
+    flex: 1;
+    max-width: 330px;
+  }
+
+  button {
+    width: 110px;
+  }
+}
+
+.paragraph {
+  color: $gray-2;
+  font-family: 'Proxima Nova', serif;
+  font-size: 12px;
+  margin: 32px 0 28px;
+
+  @include ThemeDark {
+    color: $ebb;
+  }
+}
+
+.closeButton {
+  cursor: pointer;
+  left: 10px;
+  position: absolute;
+  top: 10px;
+}
+
+.hidden {
+  display: none;
+}

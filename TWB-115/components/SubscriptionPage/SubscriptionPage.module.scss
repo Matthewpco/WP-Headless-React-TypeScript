@@ -1,0 +1,344 @@
+@import '../../styles/media-breakpoints';
+@import '../../styles/colors';
+@import '../../styles/theme';
+
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-family: Merriweather, serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 30px;
+  line-height: 35px;
+  margin: 0;
+
+  @include mobile {
+    text-align: center;
+    padding: 0 10px;
+  }
+}
+
+.choosePlanContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 44px;
+  padding-top: 50px;
+  width: 100%;
+  max-width: 1157px;
+
+  @include mobile_and_tablet {
+    gap: 0;
+  }
+}
+
+.plansContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin: 30px 0 60px 0;
+  width: 100%;
+
+  @include mobile_and_tablet {
+    flex-direction: column;
+  }
+}
+
+.planContainer {
+  height: 350px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Proxima Nova, serif;
+  border: 1px solid $athens-gray;
+  border-radius: 6px;
+  background: rgba($athens-gray-3, 0.5);
+
+  @include ThemeDark {
+    background: rgba($athens-gray-3, 0.03);
+  }
+
+  @include mobile_and_tablet {
+    width: 342px;
+
+    &:nth-child(1) {
+      order: 2;
+    }
+
+    &:nth-child(2) {
+      order: 1;
+    }
+
+    &:nth-child(3) {
+      order: 3;
+    }
+  }
+}
+
+.planName {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 32px;
+  letter-spacing: 0.25px;
+  padding: 30px 0 24px 0;
+  margin: 0 24px;
+  border-bottom: 1px solid $athens-gray;
+  text-align: center;
+  width: calc(100% - 48px);
+}
+
+.planCost {
+  position: relative;
+  font-weight: 800;
+  font-size: 60px;
+  line-height: 32px;
+  margin-top: 30px;
+}
+
+.planCost:before {
+  content: '$';
+  position: absolute;
+  left: -15px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 24px;
+}
+.planTermPeroid {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 24px;
+  vertical-align: super;
+}
+
+.planRenews {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 16px;
+  text-transform: capitalize;
+  margin-top: 31px;
+}
+
+.subscribeButton {
+  margin-top: 45px;
+  border-color: $punch;
+  color: $punch;
+}
+
+.planContainerPrimary {
+  height: 408px;
+  position: relative;
+  border-color: $punch;
+  padding: 29px 0 30px 0;
+  background: transparent;
+
+  @include ThemeDark {
+    background: transparent;
+  }
+
+  .planCost {
+    color: $punch;
+    font-weight: 700;
+  }
+
+  .subscribeButton {
+    margin-top: 24px;
+    color: $white;
+  }
+}
+
+.planContainerPrimary:before {
+  content: '$1 FOR 1 MONTH';
+
+  position: absolute;
+  top: 0;
+  transform: translateY(-50%);
+
+  color: $white;
+  background: $punch;
+  padding: 8px 28px;
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.includeMonthlyPrintMagazineWrapper {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 0;
+  border-top: 1px solid $athens-gray;
+  margin-top: 21px;
+  width: calc(100% - 48px);
+}
+
+.includeMonthlyPrintMagazineLabel {
+  font-family: Merriweather, serif;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.includeMonthlyPrintMagazinePlaceholder {
+  height: 72px;
+}
+
+.subscriberBenefitsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 38px;
+  padding: 37px 0 24px 0;
+  background: #f6f4f4;
+  align-self: center;
+  width: calc(100vw - 16px);
+  font-family: Proxima Nova, serif;
+
+  @include ThemeDark {
+    background: rgba($athens-gray-3, 0.05);
+  }
+}
+
+.subscriberBenefitsContent {
+  display: flex;
+  gap: 38px;
+  max-width: 1260px;
+
+  @include mobile_and_tablet {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.subscriberBenefitsListWrapper {
+  flex: 1;
+
+  @include mobile_and_tablet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.subscriberBenefitsList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-left: 0;
+
+  margin-top: 25px;
+}
+
+.subscriberBenefit {
+  position: relative;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  list-style-type: none;
+  margin-left: 25px;
+}
+
+.subscriberBenefit:before {
+  position: absolute;
+  content: '✓';
+  top: 2px;
+  left: -25px;
+  color: $punch;
+}
+.subscriberBenefitSubHead {
+  position: relative;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 24px;
+  list-style-type: none;
+  margin-left: 0;
+  padding: 5px 0;
+}
+.tryItButton {
+  margin-top: 28px;
+  padding-left: 39px;
+  padding-right: 39px;
+  font-size: 14px;
+}
+
+.subscriberBenefitsPlanRenews {
+  font-size: 11px;
+  font-weight: 600;
+  color: #9f9d9d;
+}
+
+.faqContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 58px;
+  margin-bottom: 60px;
+}
+
+.customerCenterContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  flex: 1;
+  min-height: 388px;
+  background: rgba(243, 245, 247, 0.5);
+  font-family: Proxima Nova, serif;
+
+  @include ThemeDark {
+    background: rgba($athens-gray-3, 0.03);
+  }
+}
+
+.customerCenterTitle {
+  font-family: Merriweather, serif;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 35px;
+  text-align: center;
+}
+
+.faqContent {
+  display: flex;
+  gap: 42px;
+  margin-top: 32px;
+
+  @include mobile_and_tablet {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+}
+
+.accordionContainer {
+  flex: 1;
+}
+
+.newsletterComponent {
+  width: calc(100vw - 16px);
+  background: $hint-of-red-2;
+  border: none;
+  padding: 58px 0;
+}
+
+.slider {
+  width: 100%;
+  margin: 50px 0;
+
+  @include mobile {
+    padding: 0 16px;
+  }
+}

@@ -1,0 +1,201 @@
+@import '../../styles/colors.scss';
+@import '../../styles/theme.scss';
+@import '../../styles/media-breakpoints.scss';
+
+.giftContainer {
+  width: calc(100vw - 16px);
+  background-color: $black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0;
+
+  @include ThemeDark {
+    background: rgba($athens-gray-3, 0.05);
+  }
+
+  .giftContent {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1264px;
+
+    .giftHeader {
+      flex: 0 0 50%;
+      max-width: 50%;
+      padding-left: 7.5px;
+      padding-right: 7.5px;
+
+      @include mobile_and_tablet {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+
+      & h2 {
+        padding-bottom: 34px;
+        text-align: left;
+        color: $white;
+        border-bottom: 1px solid $alto-3;
+        font-family: 'Merriweather', serif;
+        font-weight: 900;
+        font-size: 34px;
+        margin: 0;
+      }
+
+      & p {
+        margin: 25px 0;
+        font-family: 'Merriweather', serif;
+        font-size: 14px;
+        font-weight: 700;
+        color: $silver;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+      }
+    }
+
+    .giftList {
+      flex: 0 0 50%;
+      max-width: 50%;
+      padding-left: 7.5px;
+      padding-right: 7.5px;
+
+      @include mobile_and_tablet {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+
+      .giftForm {
+        display: flex;
+        flex-direction: column;
+
+        .giftRadio {
+          display: block;
+          margin-bottom: 15px;
+
+          &:hover {
+            background-color: $mine-shaft-3;
+          }
+
+          input {
+            position: absolute;
+            opacity: 0;
+            visibility: hidden;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow: visible;
+
+            &:checked~.giftRadioWrapper {
+              border-color: $punch;
+              background-color: $mine-shaft-3;
+            }
+
+            &:checked~.giftRadioWrapper .giftRadioCircle::after {
+              opacity: 1;
+            }
+          }
+
+          .giftRadioWrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 15px;
+            border: 1px solid $boulder;
+            cursor: pointer;
+            transition: all .4s;
+
+            .giftRadioCircle {
+              transform: translateY(-50%);
+              left: 30px;
+              background: linear-gradient(180deg, $gallery 0%, $white 45.78%, $white 100%);
+              width: 20px;
+              height: 20px;
+              position: absolute;
+              top: 50%;
+              display: block;
+              border-radius: 50%;
+
+              @include mobile {
+                left: 15px;
+              }
+
+              &::after {
+                content: '';
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 8px;
+                height: 8px;
+                background-color: $punch;
+                transition: all .4s;
+                opacity: 0;
+                position: absolute;
+                top: 50%;
+                display: block;
+                border-radius: 50%;
+              }
+            }
+
+            .giftRadioInfo {
+              display: flex;
+              justify-content: center;
+              flex-direction: column;
+              align-items: center;
+
+              .giftRadioInfoTitle {
+                padding-left: 55px;
+                font-family: 'Merriweather', serif;
+                font-weight: 700;
+                font-size: 18px;
+                color: $white;
+                background: no-repeat center left;
+
+                @include mobile {
+                  padding-left: 40px;
+                }
+              }
+
+              .giftRadioInfoSubtitle {
+                font-family: 'Proxima Nova', serif;
+                font-weight: 400;
+                font-size: 16px;
+                color: $silver;
+              }
+            }
+          }
+        }
+
+        .giftButton {
+          margin-top: 25px;
+          height: 50px;
+          border: 0;
+          transition: all .4s;
+          color: $shark;
+          background-color: $athens-gray-4;
+          border-color: $athens-gray-4;
+          width: 100% !important;
+          display: inline-block;
+          font-family: "Montserrat", sans-serif;
+          font-weight: 400;
+          text-align: center;
+          vertical-align: middle;
+          user-select: none;
+          font-size: 18px;
+          border-radius: 0;
+          cursor: pointer;
+
+          & span {
+            position: relative;
+            font-family: 'Proxima Nova', serif;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: $cod-gray;
+          }
+        }
+      }
+    }
+  }
+}

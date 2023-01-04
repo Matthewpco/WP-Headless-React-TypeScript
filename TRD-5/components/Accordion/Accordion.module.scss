@@ -1,0 +1,48 @@
+@import '../../styles/colors';
+@import '../../styles/media-breakpoints';
+@import '../../styles/theme';
+
+.accordionWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.accordionItem {
+  background: none;
+  border: 0;
+  border-top: 1px solid $athens-gray;
+  text-align: left;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 16px 0;
+  font-family: Merriweather, serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: $cod-gray;
+  cursor: pointer;
+
+  & svg {
+    min-width: 20px;
+  }
+
+  @include ThemeDark {
+    color: $athens-gray;
+  }
+}
+
+.content {
+  font-family: Proxima Nova, serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: $gray-3;
+  padding-bottom: 32px;
+}
+
+.accordionWrapper {
+  border-bottom: 1px solid $athens-gray;
+}

@@ -1,0 +1,53 @@
+@import '../../styles/colors';
+@import '../../styles/media-breakpoints';
+@import '../../styles/theme';
+
+
+.list {
+    margin-top: 18px;
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    justify-content: flex-start;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+    @include mobile {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+}
+
+.nav {
+    display: inline;
+}
+
+
+
+.listItemAnchor {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    height: 18px;
+    p {
+        font-size: 14px;
+        font-weight: 600;
+        color: $mine-shaft-2;
+        font-family: Proxima Nova, serif;
+        display: inline;
+        align-items: center;
+        
+        @include ThemeDark {
+            color: $ebb;
+        }
+    }
+
+    svg {
+        width: 3.5px;
+        height: 7px;
+        margin-left: 8px;
+    }
+
+}

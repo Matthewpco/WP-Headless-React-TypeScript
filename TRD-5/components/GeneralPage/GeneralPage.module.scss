@@ -1,0 +1,99 @@
+// For general template - Copid and cleand from Default
+@import '../../styles/colors';
+@import '../../styles/media-breakpoints';
+@import '../../styles/theme';
+
+.root {
+    :global(.has-white-background-color) {
+        background-color: #fff;
+    }
+    :global(.wp-block-cover) {
+        h2{
+            color: $black;
+            font-family: 'Merriweather', serif;
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 10px;
+            
+      
+            @include mobile {
+              font-size: 20px;
+             
+              
+            }
+        }
+        p{
+            color: $black;
+            font-size: 20px; 
+            margin-top: 5px;
+
+            @include mobile {
+                font-size: 15px;
+                
+              }
+        }
+
+    }
+    :global(.wp-block-group) {
+        max-width: 1100px;
+        margin:0 auto;
+        padding: 40px 0 10px 0;
+
+        @include mobile {
+            padding: 20px 0;
+          }
+        h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 55px;
+            font-weight: bold;
+            margin: 0;
+            max-width: 787px;
+            text-align: center;
+            padding: 20px;
+      
+            @include mobile {
+              font-size: 30px;
+            }
+        }
+        h3 {
+            font-family: 'Merriweather', serif;
+            font-size: 30px;
+            font-weight: bold;
+            margin: 0;
+            max-width: 787px;
+            text-align: center;
+            padding: 20px 0;
+      
+            @include mobile {
+              font-size: 25px;
+            }
+        }
+        h4 {
+            font-family: 'Merriweather', serif;
+            font-size: 25px;
+            font-weight: bold;
+            margin: 0;
+            max-width: 787px;
+            text-align: center;
+            padding: 10px 0;
+      
+            @include mobile {
+              font-size: 20px;
+            }
+        }
+        p {
+            font-size: 18px;
+      
+            @include mobile {
+              font-size: 15px;
+            }
+        }
+        figcaption{
+                color: $swiss-coffee;
+            }
+        
+    }
+    
+}
+

@@ -1,0 +1,102 @@
+@import '../../styles/media-breakpoints';
+@import '../../styles/colors';
+@import '../../styles/theme';
+
+.topStories {
+  @include mobile_and_tablet {
+    display: none;
+  }
+
+  margin: 40px 0 20px;
+
+  .titleContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Merriweather', serif;
+    font-size: 20px;
+    font-weight: 700;
+    padding-top: 30px;
+    border-top: 1px solid $cod-gray;
+    color: $mine-shaft-2;
+    @include ThemeDark {
+      border-top: 1px solid $athens-gray;
+      color: $ebb;
+    }
+  }
+
+  .dropDown {
+    font-size: 11px;
+    font-family: 'Proxima Nova', serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+
+    svg {
+      margin-left: 8px;
+      fill: $cod-gray;
+
+      @include ThemeDark {
+        fill: $ebb;
+      }
+    }
+  }
+
+  .cityListActive {
+    position: absolute;
+    width: 170px;
+    font-family: 'Proxima Nova', serif;
+    font-size: 15px;
+    background-color: $hint-of-red-2;
+    font-weight: 400;
+    border: 1px solid $ebb;
+    cursor: pointer;
+    padding: 6px 22px;
+    transform: translateX(-100px);
+
+    li:hover {
+      color: $punch;
+    }
+
+    @include ThemeDark {
+      background-color: $tuna;
+    }
+  }
+
+  li {
+    list-style-type: none;
+  }
+
+  .topStoriesContainer {
+    padding-left: 0px;
+
+    svg {
+      margin-right: 20px;
+      stroke: $cod-gray;
+
+      @include ThemeDark {
+        stroke: $ebb;
+      }
+    }
+
+    span {
+      font-family: 'Proxima Nova', serif;
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    li {
+      margin-bottom: 20px;
+      font-family: 'Merriweather', serif;
+      font-weight: 700;
+      font-size: 16px;
+    }
+  }
+
+  .market {
+    margin-right: 10px;
+    display: inline-block;
+  }
+}

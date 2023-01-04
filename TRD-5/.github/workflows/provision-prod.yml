@@ -1,0 +1,78 @@
+name: news-front-end-prod
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: Prepare
+        uses: actions/setup-node@v2
+        with:
+          cache: npm
+          node-version: 16
+
+      - name: Create release
+        run: npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Get version
+        id: version
+        run: |
+          VVERSION=$(git describe --tags `git rev-list --tags --max-count=1`)
+          echo "V-Version: $VVERSION"
+          MAJOR=$(semver get major $VVERSION)
+          MINOR=$(semver get minor $VVERSION)
+          PATCH=$(semver get patch $VVERSION)
+          VERSION="$MAJOR.$MINOR.$PATCH"
+          echo "Version: $VERSION"
+          echo "::set-output name=semver::$VERSION"
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: Build Docker
+        id: docker-build
+        run: |
+          REPO_URI=$(aws ecr describe-repositories --repository-names trd-prod | jq -r ".repositories[0].repositoryUri")
+          SERVER_NAME=$(echo $REPO_URI | awk -F'/' '{print $1}')
+          aws ecr get-login-password --region us-east-1 | sudo docker login --username AWS --password-stdin $SERVER_NAME
+          sudo docker build -t $REPO_URI:${{ steps.version.outputs.semver }} . --platform linux/arm64
+          sudo docker push $REPO_URI:${{ steps.version.outputs.semver }}
+
+      - name: Terraform - Setup version
+        uses: hashicorp/setup-terraform@v1.2.1
+        with:
+          terraform_version: 1.1.5
+          terraform_wrapper: false
+
+      - name: Terraform - Init backend
+        working-directory: terraform
+        run: terraform init
+
+      - name: Terraform - Select Workspace
+        working-directory: terraform
+        run: terraform workspace select prod
+
+      - name: Terraform - Plan
+        working-directory: terraform
+        run: |
+          terraform plan -var-file=vars.prod.tfvars
+        env:
+          TF_VAR_trd_image_tag: ${{ steps.version.outputs.semver }}
+
+      - name: Terraform - Apply
+        working-directory: terraform
+        run: |
+          terraform apply -auto-approve -var-file=vars.prod.tfvars
+        env:
+          TF_VAR_trd_image_tag: ${{ steps.version.outputs.semver }}

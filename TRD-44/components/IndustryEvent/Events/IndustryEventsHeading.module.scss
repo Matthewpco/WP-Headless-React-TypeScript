@@ -1,0 +1,58 @@
+@import '../../../styles/colors';
+@import '../../../styles/media-breakpoints';
+@import '../../../styles/theme';
+
+.root {
+  align-self: center;
+  color: $black;
+  font-family: 'Merriweather', serif;
+  padding: 49px 0 57px;
+  max-width: 991px;
+
+  @include ThemeDark {
+    color: $ebb;
+  }
+}
+
+.title {
+  font-size: 38px;
+  font-weight: 900;
+  margin: 0 0 16px;
+  text-align: center;
+
+  @include mobile {
+    font-size: 26px;
+    margin-bottom: 12px;
+  }
+}
+
+.content {
+  color: $cod-gray;
+  font-size: 18px;
+
+  @include mobile {
+    font-size: 15px;
+  }
+
+  @include ThemeDark {
+    color: $ebb;
+  }
+
+  :global(.button) {
+    align-self: center;
+    background: $punch;
+    border-radius: 6px;
+    color: $white;
+    font-family: 'Proxima Nova', serif;
+    display: inline-flex;
+    height: 36px;
+    justify-content: center;
+    letter-spacing: 0.5px;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 0 20px;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 36px;
+  }
+}

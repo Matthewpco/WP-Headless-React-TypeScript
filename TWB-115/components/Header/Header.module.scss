@@ -1,0 +1,186 @@
+@import '../../styles/media-breakpoints';
+@import '../../styles/colors';
+@import '../../styles/theme';
+
+.wrapper {
+  position: sticky;
+  top: 0;
+  background: $white;
+  width: 100%;
+  border-bottom: 1px solid $athens-gray;
+  z-index: 150;
+  opacity: 1;
+  transition: opacity 0.5s;
+
+  @include ThemeDark {
+    background: $mine-shaft;
+  }
+
+  &.transparent {
+    background: transparent;
+    border: none;
+  }
+
+  &.fixed {
+    position: fixed;
+  }
+
+  .progressIndicator {
+    height: 2px;
+    background-color: $punch;
+    width: 0%;
+    position: absolute;
+    left: 0;
+  }
+
+  :global(.animate) {
+    transition: width 5s;
+  }
+
+  :global(.width100) {
+    width: 100%;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+}
+
+.actionButtons {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.signUpButtons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+}
+
+.avatarIcon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.iconArrow {
+  width: 14px;
+  height: 7px;
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.icon {
+  color: $cod-gray;
+  cursor: pointer;
+
+  @include ThemeDark {
+    color: $ebb;
+  }
+}
+
+.dropdown {
+  transition: opacity 0.2s;
+  @include mobile {
+    display: none;
+  }
+}
+
+.hiddenDropdown {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.button {
+  font-family: 'Proxima Nova', serif;
+  font-style: normal;
+  font-size: 14px;
+}
+
+.menu {
+  position: relative;
+
+  @include mobile {
+    position: static;
+  }
+}
+
+.accountButton {
+  font-family: 'Barlow Condensed', serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: $mine-shaft-2;
+  align-items: center;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+.colorWhite {
+  color: $white;
+}
+
+.signInButton {
+  @include ThemeDark {
+    color: $ebb;
+  }
+}
+
+@include desktop {
+  .hiddenForDesktop {
+    display: none;
+  }
+
+  .signUpButtons {
+    min-width: 210px;
+  }
+}
+
+@include tablet {
+  .header {
+    padding: 20px 16px 20px 16px;
+  }
+
+  .hiddenForTablet {
+    display: none;
+  }
+
+  .actionButtons {
+    gap: 14px;
+  }
+}
+
+@include mobile {
+  .header {
+    padding: 16px;
+    height: 60px;
+  }
+
+  .hiddenForMobile {
+    display: none;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .hiddenDropdown {
+    display: none;
+  }
+
+  .wrapper.fixed {
+    position: sticky;
+    top: 0;
+  }
+}

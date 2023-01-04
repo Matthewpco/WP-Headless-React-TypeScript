@@ -1,0 +1,71 @@
+@import '../../styles/colors';
+@import '../../styles/media-breakpoints';
+@import '../../styles/theme';
+
+.root {
+  :global(.BrandStudioDesc) {
+    align-items: center;
+    color: $black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 85px 0 78px;
+
+    @include ThemeDark {
+      color: $ebb;
+    }
+
+    @include mobile {
+      padding: 39px 24px 44px;
+    }
+
+    h2 {
+      font-family: 'Merriweather', serif;
+      font-weight: 900;
+      font-size: 40px;
+      text-align: center;
+      margin: 0 0 28px;
+      max-width: 590px;
+
+      em {
+        font-weight: 400;
+      }
+
+      @include mobile {
+        font-size: 25px;
+        margin-bottom: 17px;
+      }
+    }
+
+    p {
+      font-family: 'Proxima Nova', serif;
+      font-size: 24px;
+      max-width: 823px;
+      text-align: center;
+      margin: 0 0 41px;
+
+      &:last-child {
+        margin: 0;
+      }
+
+      @include mobile {
+        font-size: 17px;
+        margin-bottom: 27px;
+      }
+
+      a {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        color: $white;
+        background-color: $red;
+        height: 36px;
+        padding: 0 20px;
+        border-radius: 6px;
+        font-family: 'Proxima Nova', serif;
+        font-weight: 700;
+        font-size: 12px;
+      }
+    }
+  }
+}

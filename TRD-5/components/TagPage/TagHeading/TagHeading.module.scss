@@ -1,0 +1,80 @@
+@import '../../../styles/colors';
+@import '../../../styles/media-breakpoints';
+@import '../../../styles/theme';
+
+.headerLine {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  margin: 42px 0 70px;
+
+  @include mobile {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0 40px;
+    gap: 10px;
+  }
+}
+
+.title {
+  color: $black;
+  font-family: Merriweather, serif;
+  font-weight: 900;
+  font-size: 38px;
+  grid-column: 2;
+  letter-spacing: 1px;
+  margin: 0;
+  padding: 0 3px;
+  position: relative;
+
+  @include ThemeDark {
+    color: $white;
+  }
+
+  @include mobile {
+    font-size: 16px;
+  }
+
+  &:after {
+    content: '';
+    background: $melon;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    height: 24px;
+    left: 0;
+    right: 0;
+    z-index: -1;
+
+    @include mobile {
+      height: 15px;
+      bottom: -5px;
+    }
+  }
+}
+
+.markets {
+  grid-column: 3;
+  justify-self: flex-end;
+}
+
+.articles {
+  border-bottom: 1px solid $athens-gray;
+  display: flex;
+  align-items: baseline;
+  gap: 64px;
+  margin-bottom: 61px;
+  padding-bottom: 52px;
+
+  @include mobile {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+  }
+}
+
+@include mobile {
+  .articles {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}

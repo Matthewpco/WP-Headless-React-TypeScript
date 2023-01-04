@@ -1,0 +1,33 @@
+@import '../../styles/colors';
+@import '../../styles/media-breakpoints';
+@import '../../styles/theme';
+
+.root {
+  border-bottom: 1px solid $athens-gray;
+  border-top: 1px solid $athens-gray;
+  padding: 50px 0;
+  margin: 0 0 50px;
+
+  @include mobile {
+    border: 0;
+    padding: 0;
+    margin-bottom: 30px;
+  }
+}
+
+.rootHomepage {
+  border-top: 3px solid $mine-shaft-2;
+  border-bottom: 3px solid $mine-shaft-2;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-top: 40px;
+  margin-bottom: 0;
+
+  @include ThemeDark {
+    border-color: $athens-gray;
+  }
+
+  @include mobile {
+    margin-top: 16px;
+  }
+}

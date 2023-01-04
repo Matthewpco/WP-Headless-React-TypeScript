@@ -1,0 +1,1 @@
+export { SeoHeadTags } from './SeoHeadTags';

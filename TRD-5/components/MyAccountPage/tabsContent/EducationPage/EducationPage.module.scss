@@ -1,0 +1,100 @@
+@import '../../../../styles/colors';
+@import '../../../../styles/media-breakpoints';
+@import '../../../../styles/theme';
+
+.root {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0 0 40px;
+  font-family: Merriweather, serif;
+
+  @include tablet {
+    padding: 0;
+  }
+
+  @include mobile {
+    padding: 0;
+  }
+}
+
+.trdEduLogo {
+  width: 187px;
+}
+
+.trdEduDescription {
+  font-weight: 400;
+  font-size: 18px;
+  margin-top: 16px;
+  color: $black;
+
+  @include ThemeDark {
+    color: $white;
+  }
+}
+
+.benefitsButtonsWrapper {
+  display: flex;
+  gap: 20px;
+
+  .benefitsButtonWrapper {
+    flex: 1;
+
+    .benefitsButton {
+      width: 100%;
+      border: solid 2px $punch;
+      color: $punch;
+    }
+  }
+}
+
+.trdEduBenefitsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: Proxima Nova, serif;
+  font-weight: 700;
+  font-size: 16px;
+  margin-top: 40px;
+  padding: 38px 0;
+  border-top: 1px solid $athens-gray;
+  border-bottom: 1px solid $athens-gray;
+}
+
+.trdEduGuideWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 32px;
+
+  & .trdEduGuideTitle {
+    font-family: Merriweather, serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  & .trdEduGuideList {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 20px;
+    padding-left: 15px;
+    font-family: Proxima Nova, serif;
+    font-weight: 400;
+    font-size: 12px;
+  }
+}
+
+.getCodeButton {
+  font-family: Proxima Nova, serif;
+  font-style: normal;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: $white;
+  margin-top: 10px;
+}
+
+.trdProLink {
+  margin-left: 5px;
+  text-decoration: underline;
+}

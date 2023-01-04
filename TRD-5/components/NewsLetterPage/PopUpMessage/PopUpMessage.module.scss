@@ -1,0 +1,11 @@
+@import '../../../styles/colors';
+@import '../../../styles/media-breakpoints';
+@import '../../../styles/theme';
+
+.root {
+  font-size: 20px;
+
+  .closeButton {
+    cursor: pointer;
+  }
+}

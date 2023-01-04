@@ -1,0 +1,147 @@
+@import '../../../styles/colors';
+@import '../../../styles/theme';
+@import '../../../styles/media-breakpoints';
+
+.root {
+  align-items: center;
+  color: $white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 130px;
+  padding: 53px 0 112px;
+
+  @include mobile_and_tablet {
+    padding: 33px 0 68px;
+    gap: 50px;
+  }
+}
+
+.title {
+  font-family: 'Barlow Condensed', serif;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+
+  @include mobile_and_tablet {
+    font-size: 20px;
+  }
+}
+
+.columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px;
+
+  @include mobile_and_tablet {
+    padding: 0 48px;
+  }
+}
+
+.column {
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  text-align: center;
+  flex: 1;
+
+  @include mobile_and_tablet {
+    max-width: calc(50% - 32px);
+  }
+}
+
+.columnValue {
+  font-family: 'Proxima Nova', serif;
+  font-size: 90px;
+  font-weight: 700;
+  margin: 0 0 23px;
+
+  @include mobile_and_tablet {
+    font-size: 42px;
+  }
+}
+
+.columnTitle {
+  color: $punch;
+  font-family: 'Merriweather', serif;
+  font-style: italic;
+  font-size: 25px;
+  margin: 0;
+  max-width: 178px;
+
+  @include mobile_and_tablet {
+    font-size: 15px;
+  }
+}
+
+.rootLight {
+  background-image: url('../../../assets/images/advertiser-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  gap: 60px;
+  margin-top: -267px;
+  padding-top: calc(267px + 53px);
+
+  @include mobile {
+    gap: 48px;
+    margin-top: -197px;
+    padding-top: calc(197px + 53px);
+  }
+
+  @include ThemeDark {
+    background-color: $cod-gray !important;
+  }
+
+  .title {
+    color: $mine-shaft-2;
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-size: 21px;
+    letter-spacing: -0.5px;
+    text-transform: none;
+
+    @include mobile {
+      font-size: 18px;
+    }
+  }
+
+  .columns {
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1264px + (2 * 16px);
+    width: 100%;
+
+    @include mobile {
+      padding: 0 32px;
+    }
+  }
+
+  .columnValue {
+    color: $cod-gray;
+    font-family: 'Merriweather', serif;
+    font-size: 39px;
+    margin-bottom: 23px;
+
+    @include mobile {
+      font-size: 26px;
+      margin-bottom: 12px;
+    }
+  }
+
+  .columnTitle {
+    color: $silver-chalice-2;
+    font-family: 'Merriweather', serif;
+    font-size: 13px;
+    white-space: nowrap;
+
+    @include mobile {
+      font-size: 11px;
+    }
+  }
+}

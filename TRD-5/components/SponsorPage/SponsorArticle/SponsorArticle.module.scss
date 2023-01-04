@@ -1,0 +1,94 @@
+@import '../../../styles/colors';
+@import '../../../styles/media-breakpoints';
+@import '../../../styles/theme';
+
+.root {
+  display: block;
+  width: 100%;
+  margin-bottom: 48px;
+
+  @include mobile {
+    margin-bottom: 30px;  
+  }
+}
+
+.container {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 48px;
+
+  @include mobile {
+    gap: 16px;
+    margin-bottom: 30px;
+  }
+}
+
+.image {
+  flex: 0 0 256px;
+  height: 160px;
+  object-fit: cover;
+  overflow: hidden;
+
+  @include mobile {
+    flex: 0 0 104px;
+    height: 65px;
+  }
+
+  @include ThemeDark {
+    color: $ebb;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  @include mobile {
+    gap: 6px;
+  }
+}
+
+.heading {
+  align-items: center;
+  display: flex;
+  gap: 24px;
+}
+
+.publishedDate {
+  @include mobile {
+    display: none;
+  }
+}
+
+.title {
+  color: $mine-shaft-2;
+  font-family: 'Merriweather', serif;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+
+  @include mobile {
+    font-size: 18px;
+  }
+
+  @include ThemeDark {
+    color: $ebb;
+  }
+}
+
+.description {
+  color: $mine-shaft-2;
+  font-family: 'Proxima Nova', serif;
+  font-size: 16px;
+  font-weight: normal;
+  margin: 0;
+
+  @include mobile {
+    display: none;
+  }
+
+  @include ThemeDark {
+    color: $ebb;
+  }
+}

@@ -1,0 +1,196 @@
+@import '../../../../styles/colors';
+@import '../../../../styles/media-breakpoints';
+@import '../../../../styles/theme';
+
+.root {
+  font-family: Proxima Nova, serif;
+}
+
+.noSubscriptionsWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-top: 33px;
+  padding: 25px 20px;
+  background-color: $athens-gray;
+
+  @include mobile {
+    flex-direction: column;
+    margin-top: 15px;
+    padding: 15px;
+  }
+}
+
+[data-theme="dark"] .noSubscriptionsWrapper {
+  background-color: $cod-gray;
+}
+
+.noSubscriptionsLabel {
+  font-weight: 700;
+  font-size: 1.5rem;
+
+  @include mobile {
+    margin: 0 0 15px 0;
+  }
+}
+
+.subscribeButton {
+  text-transform: uppercase;
+}
+
+.billingHistoryTable {
+  color: $silver;
+  border-collapse: collapse;
+  width: 100%;
+
+  & td {
+    padding: 20px;
+
+    @include mobile {
+      padding: 10px 3px;
+    }
+  }
+
+  thead {
+    font-weight: 600;
+
+    tr {
+      border-bottom: 2px solid $black;
+
+      @include mobile {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+      }
+
+      td {
+        @include mobile {
+          color: $silver !important;
+        }
+      }
+
+      td:first-child {
+        @include mobile {
+          width: 100%;
+          padding-bottom: 0;
+        }
+      }
+
+      td:nth-child(2) {
+        @include mobile {
+          width: 30%;
+        }
+      }
+
+      td:nth-child(3) {
+        @include mobile {
+          width: 50%;
+        }
+      }
+
+      td:nth-child(4) {
+        @include mobile {
+          width: 20%;
+        }
+      }
+
+      td:nth-child(5) {
+        @include mobile {
+          display: none;
+        }
+      }
+
+      td:nth-child(6) {
+        @include mobile {
+          display: none;
+        }
+      }
+    }
+  }
+
+  tbody {
+    @include mobile {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
+    tr {
+      @include mobile {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+      }
+    }
+
+    td:first-child {
+      @include mobile {
+        width: 100%;
+        font-weight: bold !important;
+      }
+    }
+
+    td:nth-child(2) {
+      @include mobile {
+        width: 30%;
+      }
+    }
+
+    td:nth-child(3) {
+      @include mobile {
+        width: 50%;
+      }
+    }
+
+    td:nth-child(4) {
+      @include mobile {
+        width: 20%;
+      }
+    }
+
+    td:nth-child(5) {
+      @include mobile {
+        display: none;
+      }
+    }
+
+    tr:nth-child(2n) {
+      background: $athens-gray;
+    }
+
+    [data-theme="dark"] & tr:nth-child(2n) {
+      background-color: $cod-gray;
+    }
+
+    & td:first-child {
+      font-weight: 700;
+
+      @include mobile {
+        font-weight: normal;
+      }
+    }
+
+    & td:nth-child(2) {
+      white-space: nowrap;
+
+      @include mobile {
+        white-space: normal;
+      }
+    }
+
+    & td:nth-child(4) {
+      font-weight: 600;
+      color: $green-haze;
+    }
+
+    & td:nth-child(5) {
+      color: $silver;
+      white-space: nowrap;
+    }
+  }
+}
+
+[data-theme="dark"] .icon path {
+  fill: $white;
+}

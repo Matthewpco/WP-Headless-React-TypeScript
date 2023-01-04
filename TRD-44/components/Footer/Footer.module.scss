@@ -1,0 +1,125 @@
+@import '../../styles/colors.scss';
+@import '../../styles/media-breakpoints';
+@import '../../styles/theme';
+
+.root {
+  background-color: $hint-of-red;
+  border-top: 1px solid $alto-2;
+  padding: 36px 20px 68px;
+
+  @include mobile {
+    border-top: none;
+  }
+
+  @include ThemeDark {
+    color: $ebb;
+    background-color: $zambezi;
+    border-top-color: $hurricane;
+  }
+}
+
+.nav {
+  font-family: 'Barlow Semi Condensed', serif;
+  margin-bottom: 48px;
+}
+
+.list {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+
+
+.listItem {
+  font-size: 14px;
+  margin: 0 20px;
+}
+
+.listItemAnchor {
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.text {
+  color: $gray;
+  font-family: 'Inter', serif;
+  font-size: 12px;
+  line-height: 20px;
+  text-align: center;
+  margin-bottom: 35px;
+
+  @include ThemeDark {
+    color: $ebb;
+  }
+}
+
+.copy {
+  margin: 0 0 10px;
+}
+
+.address {
+  font-style: normal;
+}
+
+.section {
+  border-bottom: 1px solid $mercury-2;
+  padding: 23px 0 17px;
+  margin-bottom: 17px;
+}
+
+.socialLinksList {
+  color: $black;
+
+  @include mobile_and_tablet {
+    border-bottom: 1px solid $mercury-2;
+    height: 70px;
+  }
+
+  @include ThemeDark {
+    color: $ebb;
+  }
+}
+
+.switchTheme {
+  display: none;
+}
+
+@include mobile_and_tablet {
+  .root {
+    background-color: transparent;
+    padding: 20px 25px;
+  }
+
+  .switchTheme {
+    display: block;
+  }
+
+  .listMobile {
+    flex-direction: column;
+    margin-top: 25px;
+  }
+
+  .mobileNav {
+    margin: 0;
+  }
+
+  .listItemMobile {
+    margin: 0 0 2px;
+  }
+
+  .listItemMobile:last-child {
+    margin: 0;
+  }
+
+  .listItemAnchorMobile {
+    display: inline-block;
+    font-family: 'Barlow Condensed', serif;
+    font-weight: 600;
+    font-size: 13px;
+    padding: 0 4px;
+  }
+}

@@ -1,0 +1,83 @@
+@import '../../styles/media-breakpoints';
+@import '../../styles/colors';
+@import '../../styles/theme';
+
+.sponsorsLogoAll {
+  display: grid;
+  align-items: center;
+  grid-template-columns: [left-start] 250px [left-end center-start] auto [center-end right-start] 250px [right-end];
+
+  @include mobile {
+    grid-template-columns: [left-start center-start right-start] auto [left-end center-end right-end];
+  }
+
+  img {
+    max-width: 200px;
+    height: auto;
+  }
+
+  .sponsorsBrand,
+  .sponsorsLogo {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sponsorsLogo {
+    align-items: center;
+  }
+
+  @include mobile {
+    .sponsorsBrand,
+    .sponsorsLogo {
+      flex-direction: row;
+    }
+
+    .sponsorsLogo {
+      grid-row: 1;
+      justify-content: center;
+    }
+  }
+}
+
+.sponsorName {
+  font-family: 'Proxima Nova', serif;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: $black;
+
+  @include ThemeDark {
+    color: $white;
+  }
+}
+
+.oneSponsor {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.sponsorImg {
+  padding: 8px 5px;
+}
+
+.sponsor {
+  font-family: 'Proxima Nova', serif;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 11px;
+  white-space: pre;
+  color: $black;
+  padding-top: 3px;
+
+  @include mobile {
+    font-size: 9px;
+  }
+
+  @include ThemeDark {
+    color: $white;
+
+    a {
+      color: $white;
+    }
+  }
+}

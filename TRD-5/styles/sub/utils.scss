@@ -1,0 +1,17 @@
+@import '../media-breakpoints';
+
+@for $i from 1 through 4 {
+  .blocked-#{$i} {
+    overflow: hidden;
+  }
+}
+
+.has-pushdown {
+  header[class^='Header_wrapper__'] {
+    top: 100px;
+
+    @include mobile {
+      top: 150px;
+    }
+  }
+}

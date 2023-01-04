@@ -1,0 +1,24 @@
+@import '../../styles/colors';
+@import '../../styles/theme';
+
+.checkbox {
+  border: 1px solid $black;
+  height: 21px;
+  width: 21px;
+
+  @include ThemeDark {
+    background-color: $white;
+    border-color: $white;
+  }
+}
+
+.input {
+  display: none;
+
+  &:checked {
+    + .checkbox {
+      background-color: $punch;
+      border-color: $punch;
+    }
+  }
+}

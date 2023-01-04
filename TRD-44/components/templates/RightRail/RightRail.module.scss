@@ -1,0 +1,266 @@
+@import '../../../styles/colors';
+@import '../../../styles/media-breakpoints';
+@import '../../../styles/theme';
+
+.root {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1264px + (2 * 16px);
+  padding: 0 16px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: [left-start] 224px [left-end center-start] auto [center-end right-start] 288px [right-end];
+  grid-column-gap: 64px;
+
+  @include mobile {
+    grid-template-columns: [left-start center-start right-start] auto [left-end center-end right-end];
+    padding: 0;
+  }
+}
+
+.center {
+  flex: 1;
+  overflow: hidden;
+}
+
+.content {
+  grid-column: left-start / center-end;
+  grid-row: 5;
+  overflow: hidden;
+}
+
+.contentCols {
+  display: flex;
+  flex-direction: row;
+
+  @include mobile_and_tablet {
+    flex-direction: column;
+  }
+}
+
+.contentLeft {
+  min-width: 224px;
+  margin-right: 64px;
+  width: 224px;
+
+  @include mobile_and_tablet {
+    display: flex;
+    flex-direction: column-reverse;
+    min-width: auto;
+    margin-right: 0;
+  }
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  grid-column: right-start / right-end;
+  grid-row: 5;
+
+  @include mobile_and_tablet {
+    grid-row: 5;
+  }
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.full {
+  grid-column: left-start / right-end;
+}
+
+.subHeading {
+  grid-row: 4;
+  margin: 0 0 28px;
+}
+
+.featuredBlock {
+  display: flex;
+  flex-direction: column;
+  grid-column: left-start / center-end;
+  grid-row: 5;
+  gap: 4px;
+
+  @include mobile {
+    padding-bottom: 24px;
+  }
+}
+
+.featuredBlockCaption {
+  grid-column: left-start / center-end;
+  margin-bottom: 30px;
+
+  @include mobile {
+    margin-bottom: 24px;
+  }
+}
+
+.trendingArticles {
+  border-bottom: 1px solid $athens-gray;
+  grid-row: 1;
+  margin: 48px 0;
+  padding-bottom: 32px;
+}
+
+.publishedDate {
+  align-items: center;
+  border-bottom: 1px solid $athens-gray;
+  border-top: 1px solid $athens-gray;
+  display: flex;
+  height: 54px;
+  margin-bottom: 26px;
+
+  @include mobile_and_tablet {
+    border: none;
+    margin-bottom: 11px;
+  }
+
+  @include mobile {
+    height: auto;
+  }
+}
+
+.authors {
+  margin-bottom: 20px;
+
+  @include tablet {
+    margin-bottom: 12px;
+  }
+}
+
+.message {
+  z-index: 11;
+  position: fixed;
+  background: $white;
+  left: 50%;
+  top: 20%;
+  transform: translate(-50%);
+  box-shadow: 3px 4px 20px 4px rgb(0 0 0 / 25%);
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  font-size: 20px;
+  align-items: center;
+  border-radius: 5px;
+  font-family: 'Proxima Nova', sans-serif;
+
+  svg {
+    margin-left: 20px;
+  }
+
+  @include ThemeDark {
+    background-color: $zambezi;
+  }
+}
+
+.socialShare {
+  margin-bottom: 12px;
+}
+
+.fontSizeSelector {
+  margin-bottom: 12px;
+}
+
+.newsletterSmall {
+  margin: 26px 0;
+}
+
+.newsletter {
+  border-bottom: 1px solid $swiss-coffee;
+  border-top: 1px solid $swiss-coffee;
+  grid-row: 7;
+  padding: 48px 0;
+  margin: 48px 0;
+
+  @include mobile_and_tablet {
+    grid-row: 8;
+  }
+}
+
+@include mobile_and_tablet {
+  .socialShare,
+  .fontSizeSelector {
+    display: none !important;
+  }
+}
+
+.afterTrend {
+  align-items: center;
+  display: flex;
+  grid-row: 2;
+  justify-content: space-between;
+
+  @include mobile {
+    margin-top: 16px;
+  }
+}
+
+.heading {
+  grid-row: 3;
+}
+
+.articleUtils {
+  display: flex;
+}
+
+.utilsContainer {
+  display: none;
+
+  @include mobile {
+    display: flex;
+  }
+}
+
+.articleUtilsTablet {
+  display: none;
+
+  @include tablet {
+    display: flex;
+    margin-bottom: 25px;
+  }
+}
+
+@include mobile {
+  .root {
+    .afterTrend,
+    .heading,
+    .subHeading,
+    .publishedDate,
+    .authors,
+    .newsletterSmall,
+    .tags,
+    .newsletter,
+    .contentCols {
+      margin-left: 16px;
+      margin-right: 16px;
+    }
+  }
+}
+
+@include tablet {
+  .root {
+    padding: 0 55px;
+    grid-template-columns: [left-start] 224px [left-end center-start] auto [center-end right-start] 300px [right-end];
+    grid-column-gap: 24px;
+  }
+
+  .center {
+    grid-column: left-start / center-end;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.isPinned {
+  position: sticky;
+  top: 160px;
+}
+
+.singleAside {
+  flex: 1 0 auto;
+}

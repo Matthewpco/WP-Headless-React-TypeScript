@@ -1,0 +1,32 @@
+@import '../../styles/colors';
+@import '../../styles/media-breakpoints';
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px 0;
+
+  & + & {
+    border-top: 1px solid $athens-gray;
+  }
+}
+
+.tileImage {
+  max-height: 70px;
+  width: auto;
+
+  @include mobile {
+    max-height: none;
+    max-width: 104px;
+  }
+}
+
+.tileTitle {
+  font-size: 16px;
+  flex: 1;
+
+  @include mobile {
+    font-size: 14px;
+  }
+}

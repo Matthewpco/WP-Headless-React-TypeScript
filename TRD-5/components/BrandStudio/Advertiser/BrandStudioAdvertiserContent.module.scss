@@ -1,0 +1,40 @@
+@import '../../../styles/colors';
+@import '../../../styles/media-breakpoints';
+@import '../../../styles/theme';
+
+.root {
+  max-width: 826px;
+  text-align: center;
+  color: $black;
+
+  @include ThemeDark {
+    color: $ebb;
+  }
+
+  h3 {
+    font-family: Merriweather, serif;
+    font-size: 40px;
+    font-weight: 900;
+    margin: 0 0 28px;
+
+    @include mobile {
+      font-size: 25px;
+      margin: 0 5px 20px;
+    }
+
+    em {
+      color: $red;
+      font-weight: 400;
+    }
+  }
+
+  p {
+    font-family: 'Proxima Nova', serif;
+    font-size: 24px;
+    margin: 0 0 32px;
+
+    @include mobile {
+      font-size: 17px;
+    }
+  }
+}

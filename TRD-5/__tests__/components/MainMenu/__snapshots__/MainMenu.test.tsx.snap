@@ -1,0 +1,194 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainMenu component should render variant with inherit menu items 1`] = `
+<div>
+  <div
+    class="root"
+  >
+    <div
+      class="root container"
+    >
+      <nav
+        class="mainMenu"
+      >
+        <div
+          class="category"
+        >
+          <a
+            class="categoryLink"
+            draggable="false"
+            href="/#"
+          >
+            Test title
+          </a>
+          <div
+            class="categoryDropdown"
+          >
+            <a
+              class="categoryLabel"
+              draggable="false"
+              href="/test"
+            >
+              Inherit test title
+            </a>
+          </div>
+        </div>
+      </nav>
+      <div
+        class="switchContainer"
+      >
+        <button
+          class="root rootActive"
+          type="button"
+        >
+          <div
+            class="highlight"
+          />
+          SvgMock
+          SvgMock
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`MainMenu component should render variant with inherit menu items and subitems 1`] = `
+<div>
+  <div
+    class="root"
+  >
+    <div
+      class="root container"
+    >
+      <nav
+        class="mainMenu"
+      >
+        <div
+          class="category"
+        >
+          <a
+            class="categoryLink"
+            draggable="false"
+            href="/#"
+          >
+            Test title
+          </a>
+          <div
+            class="categoryDropdown"
+          >
+            <div
+              class="itemsGroup"
+            >
+              <a
+                class="groupLabel"
+                draggable="false"
+                href="/test-inner-1"
+              >
+                Inherit test title
+              </a>
+              <div
+                class="itemsSubGroup"
+              >
+                <a
+                  class="categoryLabel"
+                  draggable="false"
+                  href="/test-inner-2"
+                >
+                  Inherit sutitem test title
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div
+        class="switchContainer"
+      >
+        <button
+          class="root rootActive"
+          type="button"
+        >
+          <div
+            class="highlight"
+          />
+          SvgMock
+          SvgMock
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`MainMenu component should render variant with link-only menu item 1`] = `
+<div>
+  <div
+    class="root"
+  >
+    <div
+      class="root container"
+    >
+      <nav
+        class="mainMenu"
+      >
+        <div
+          class="category"
+        >
+          <a
+            class="categoryLink"
+            draggable="false"
+            href="/test"
+          >
+            Test title
+          </a>
+        </div>
+      </nav>
+      <div
+        class="switchContainer"
+      >
+        <button
+          class="root rootActive"
+          type="button"
+        >
+          <div
+            class="highlight"
+          />
+          SvgMock
+          SvgMock
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`MainMenu component should render without crash with default props (smoke test) 1`] = `
+<div>
+  <div
+    class="root"
+  >
+    <div
+      class="root container"
+    >
+      <nav
+        class="mainMenu"
+      />
+      <div
+        class="switchContainer"
+      >
+        <button
+          class="root rootActive"
+          type="button"
+        >
+          <div
+            class="highlight"
+          />
+          SvgMock
+          SvgMock
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

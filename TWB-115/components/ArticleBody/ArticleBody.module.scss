@@ -1,0 +1,88 @@
+@import '../../styles/media-breakpoints';
+@import '../../styles/colors';
+@import '../../styles/theme';
+
+.root {
+  & > :not(:global(.NoStyles)),
+  & > :not(:global(.NoStyles)) * {
+    max-width: 100%;
+    width: auto;
+
+    img {
+      display: block;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    iframe,
+    :global(.fb-video) > span {
+      width: 100% !important;
+    }
+  }
+
+  :global(.fb-video),
+  :global(.wp-block-embed) {
+    margin: 32px 0;
+  }
+
+  :global(.wp-embed-aspect-16-9) {
+    aspect-ratio: 16 / 9;
+
+    & > *,
+    & iframe {
+      height: 100%;
+    }
+  }
+
+  figure {
+    margin: 0;
+  }
+
+  [class*='wp-caption-text'],
+  figcaption {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 0.8125em;
+    line-height: 1.5em;
+    margin: 0;
+  }
+
+  p:first-child {
+    margin-top: 0;
+  }
+
+  h1 {
+    font-size: 2.5em;
+  }
+
+  h2 {
+    font-size: 2em;
+  }
+
+  h3 {
+    font-size: 1.5em;
+  }
+
+  h4 {
+    font-size: 1.17em;
+  }
+
+  h5 {
+    font-size: 1em;
+  }
+
+  a {
+    text-underline-offset: 2px;
+    text-decoration: underline $punch;
+    font-weight: 600;
+    text-decoration-thickness: 2px;
+
+    &:hover {
+      font-weight: bold;
+    }
+  }
+
+  pre {
+    white-space: pre-wrap;
+  }
+}

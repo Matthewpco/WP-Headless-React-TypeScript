@@ -1,0 +1,12 @@
+@import '../../styles/media-breakpoints.scss';
+
+.cardsWrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  @include mobile {
+    flex-direction: column;
+    align-items: center;
+  }
+}

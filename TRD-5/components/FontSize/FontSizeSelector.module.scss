@@ -1,0 +1,48 @@
+@import '../../styles/colors';
+@import '../../styles/media-breakpoints';
+@import '../../styles/theme';
+
+.root {
+  font-family: 'Proxima Nova', serif;
+  display: flex;
+  flex-direction: column;
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.title {
+  color: $gray-2;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 18px;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+}
+
+.list {
+  display: flex;
+  gap: 6px;
+}
+
+.button {
+  border: 1px solid $athens-gray;
+  color: $cod-gray;
+
+  @include ThemeDark {
+    color: $ebb;
+  }
+}
+
+.small {
+  font-size: 16px;
+}
+
+.medium {
+  font-size: 20px;
+}
+
+.large {
+  font-size: 24px;
+}

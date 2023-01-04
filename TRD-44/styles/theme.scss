@@ -1,0 +1,23 @@
+@mixin ThemeLight {
+  @if (& == null) {
+    [data-theme="light"] {
+      @content;
+    }
+  } @else {
+    [data-theme="light"] & {
+      @content;
+    }
+  }
+}
+
+@mixin ThemeDark {
+  @if (& == null) {
+    [data-theme="dark"] {
+      @content;
+    }
+  } @else {
+    [data-theme="dark"] & {
+      @content;
+    }
+  }
+}

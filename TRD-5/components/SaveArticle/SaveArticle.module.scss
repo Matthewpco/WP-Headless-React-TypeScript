@@ -1,0 +1,65 @@
+@import '../../styles/colors.scss';
+@import '../../styles/media-breakpoints';
+@import '../../styles/theme.scss';
+
+.save {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  cursor: pointer;
+  @include mobile {
+    display: none;
+  }
+
+  & p {
+    margin: 0 0 0 10px;
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: $mine-shaft-2;
+
+    @include ThemeDark {
+      color: $white;
+    }
+  }
+
+  .saveIconActive {
+    & :global(.currentColor) {
+      stroke: $white;
+      fill: $black;
+
+      @include ThemeDark {
+        stroke: $black;
+        fill: $white;
+      }
+    }
+
+    & :global(.currentColorInner) {
+      fill: $white;
+
+      @include ThemeDark {
+        fill: $black;
+      }
+    }
+  }
+
+  .saveIcon {
+    & :global(.currentColor) {
+      stroke: $black;
+      fill: $white;
+
+      @include ThemeDark {
+        stroke: $white;
+        fill: $black;
+      }
+    }
+
+    & :global(.currentColorInner) {
+      fill: $black;
+
+      @include ThemeDark {
+        fill: $white;
+      }
+    }
+  }
+}

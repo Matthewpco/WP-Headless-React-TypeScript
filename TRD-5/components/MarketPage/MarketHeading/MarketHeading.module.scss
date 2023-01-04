@@ -1,0 +1,326 @@
+@import '../../../styles/colors';
+@import '../../../styles/media-breakpoints';
+@import '../../../styles/theme';
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 64px 0 16px;
+  margin-bottom: 32px;
+
+  @include tablet {
+    padding: 30px 0;
+    margin-bottom: 30px;
+  }
+
+  @include mobile {
+    padding-bottom:0;
+    margin-bottom: 17px;
+  }
+}
+
+.heading {
+  font-weight: 900;
+  font-family: 'Merriweather', sans-serif;
+  font-size: 38px;
+  text-align: center;
+  margin-bottom: 37px;
+  position: relative;
+  width: fit-content;
+  align-self: center;
+  padding: 0 6px;
+  color: $black;
+
+  @include ThemeDark {
+    color: $white;
+  }
+
+  @include mobile {
+    display: none;
+  }
+
+  &:after {
+    content: '';
+    background: $melon;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    height: 24px;
+    left: 0;
+    right: 0;
+    z-index: -1;
+
+    @include mobile {
+      height: 15px;
+      bottom: -5px;
+    }
+  }
+}
+
+.headingMobile {
+  display: block;
+  font-size: 26px;
+  @include tablet_and_desktop {
+    display: none;
+  }
+
+  &:after {
+    height: 16px;
+    bottom: 0;
+  }
+}
+
+.listMarkets {
+  list-style-type: none;
+  display: flex;
+  font-family: 'Proxima Nova', sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: $dusty-gray-2;
+  text-transform: uppercase;
+  padding: 17px 0;
+  margin: 0;
+
+
+  li {
+    margin-right: 16px;
+    white-space: nowrap;
+    cursor: pointer;
+    position: relative;
+    transition: font-weight 0.5s;
+  }
+
+  li:hover {
+    color: $black;
+    font-weight: 700;
+
+    @include ThemeDark {
+      color: $white;
+    }
+
+    &:after {
+        background: $melon;
+    }
+  }
+
+  li:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    height: 7px;
+    left: 0;
+    right: 0;
+    z-index: -1;
+  }
+
+  li:nth-child(n+9) {
+    display: none;
+  }
+
+  @include tablet {
+    li:nth-child(n+4) {
+      display: none;
+    }
+  }
+
+  .activeMarket {
+    color: $black;
+    font-weight: 700;
+
+    &:after {
+      background: $melon;
+    }
+
+    @include ThemeDark {
+      color: $white;
+    }
+  }
+
+}
+
+.dropDownMarkets {
+  position: absolute;
+  width: 170px;
+  font-family: 'Proxima Nova', serif;
+  font-size: 16px;
+  background-color: $hint-of-red-2;
+  font-weight: 400;
+  border: 1px solid $ebb;
+  cursor: pointer;
+  padding: 6px 22px;
+  z-index: 10;
+  transform: translateX(-160px) translateY(20px);
+  line-height: 38px;
+
+  li {
+    list-style-type: none;
+    cursor: pointer;
+  }
+
+  li:hover {
+    color: $punch;
+
+    @include ThemeDark {
+      color: $white;
+    }
+  }
+
+  li:nth-last-child(n+6) {
+    display: none;
+  }
+
+  @include ThemeDark {
+    background-color: $tuna;
+  }
+}
+
+.markets {
+  margin-left: auto;
+}
+
+.block {
+  align-items: center;
+  display: flex;
+  border-bottom: 1px solid $cod-gray;
+  justify-content: space-between;
+
+  @include ThemeDark {
+    border-bottom: 1px solid $white;
+
+    @include mobile {
+      border: none;
+    }
+  }
+
+  @include mobile {
+    border: none;
+    flex-direction: column;
+  }
+
+}
+
+.blockLeft {
+  width: 100%;
+
+  @include mobile {
+    display: flex;
+  }
+
+  a {
+    font-weight: 400;
+    font-family: 'Merriweather', sans-serif;
+    font-size: 14px;
+    padding: 13px 31px;
+    border-radius: 5px 5px 0% 0%;
+    white-space: nowrap;
+
+    @include mobile {
+      width: 50%;
+      text-align: center;
+    }
+  }
+
+  .topStories {
+    background-color: $athens-gray-2;
+
+    @include ThemeDark {
+      background-color: $gray;
+
+      @include mobile {
+        border-bottom: 1px solid $white;
+      }
+    }
+
+    @include mobile {
+      border-bottom: 1px solid $cod-gray;
+    }
+  }
+
+  .latestStories{
+    border: 1px solid $cod-gray;
+    border-bottom: 3px solid $white;
+
+    @include ThemeDark {
+      border: 1px solid $white;
+      border-bottom: 3px solid $mine-shaft;
+    }
+  }
+
+}
+
+.blockRight {
+  display: flex;
+  align-items: center;
+
+  .iconDropDown {
+    display: none;
+    stroke: $cod-gray;
+    fill: $cod-gray;
+    cursor: pointer;
+
+    @include tablet {
+      display: block;
+    }
+
+    @include mobile {
+      display: none;
+    }
+
+    @include ThemeDark {
+      stroke: $ebb;
+      fill: $ebb;
+    }
+  }
+
+  @include mobile {
+    margin: 0 10px;
+    width: 100%;
+  }
+
+  .buttonSlider {
+    margin: auto 0;
+    transform: scale(0.4);
+
+    @include tablet_and_desktop {
+      display: none;
+    }
+  }
+
+  .rightButtonSlider {
+    transform: rotate(180deg) scale(0.4);
+    margin-right: 0;
+  }
+
+  .buttonSlider {
+    path {
+      transition: fill 0.3s;
+      cursor: pointer;
+    }
+
+    path:hover {
+      fill: $punch;
+    }
+  }
+
+  .buttonSlider[disabled] {
+    path {
+      cursor: auto;
+      fill: $athens-gray;
+    }
+  }
+
+}
+
+.container {
+  overflow: hidden;
+  margin: 0 15px;
+
+  @include mobile {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+}

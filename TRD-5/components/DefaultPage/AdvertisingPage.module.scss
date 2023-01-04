@@ -1,0 +1,65 @@
+@import '../../styles/colors';
+@import '../../styles/media-breakpoints';
+@import '../../styles/theme';
+
+.root {
+  :global(.Advertising__heading) {
+    height: 267px;
+    align-items: center;
+    border-bottom: 1px solid #ababab;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1264px + (2 * 16px);
+    position: relative;
+    width: 100%;
+
+    @include mobile {
+      height: 197px;
+    }
+  }
+
+  :global(.Advertising__title) {
+    color: $cod-gray;
+    font-family: 'Merriweather', serif;
+    font-size: 39.06px;
+    font-weight: 700;
+    letter-spacing: -0.7px;
+    margin: 0;
+  }
+
+  :global(.Advertising__subtitle) {
+    margin: 0;
+  }
+
+  :global(.Advertising__button) {
+    color: $white;
+    background: $punch;
+    border-radius: 6px;
+    display: inline-block;
+    font-family: 'Proxima Nova', serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 6px 20px;
+    text-transform: uppercase;
+
+    @include mobile {
+      font-size: 12px;
+    }
+  }
+
+  :global(#contact-us)::before {
+    content: 'Contact Us';
+    font-family: 'Merriweather', serif;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 35px;
+
+    @include mobile {
+      font-size: 22px;
+    }
+  }
+}

@@ -1,0 +1,118 @@
+@import '../../../styles/colors';
+@import '../../../styles/media-breakpoints';
+@import '../../../styles/theme';
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 52px 0 16px;
+  border-bottom: 1px solid $athens-gray;
+  margin: 32px 13px;
+  margin-top: 0;
+
+  @include mobile_and_tablet {
+    padding: 20px 0;
+    margin-bottom: 30px;
+  }
+}
+
+.container {
+    display: grid;
+    align-items: end;
+    grid-template-columns: 150px auto 150px;
+
+    @include mobile {
+      grid-template-columns: auto 100px;
+    }
+}
+
+.markets {
+  margin-left: auto;
+}
+
+.block {
+    display: flex;
+    flex-direction: column;
+
+  @include mobile_and_tablet {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+.blockCenter {
+  align-items: center;
+  grid-column: 2;
+
+  @include mobile {
+    grid-column: 1;
+    align-items: start;
+  }
+
+  span {
+    font-family: 'Proxima Nova', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    @include mobile {
+      font-size: 9px;
+    }
+  }
+
+  .description {
+    display: none;
+    position: absolute;
+    box-shadow: 3px 4px 20px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    background-color: $white;
+    font-family: 'Proxima Nova';
+    font-weight: 600;
+    font-size: 13px;
+    padding: 15px 13px;
+    max-width: 200px;
+    transform: translateY(110px);
+    z-index: 10;
+  }
+
+  .description::before {
+    content: '▲';
+    position: absolute;
+    transform: translate(-13px, -25px);
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    color: $white;
+  }
+
+  .logoImg {
+    height: 50px;
+
+    @include mobile {
+      height: 35px;
+    }
+  }
+
+  .logoImg:hover + .description {
+    display: block;
+
+    @include mobile {
+      display: none;
+    }
+  }
+}
+
+.blockRight {
+  grid-column: 3;
+
+  @include mobile_and_tablet {
+    align-items: flex-end;
+    flex-direction: column-reverse;
+  }
+
+  @include mobile {
+    grid-column: 2;
+  }
+}

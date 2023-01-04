@@ -1,0 +1,146 @@
+@import '../../../styles/colors';
+@import '../../../styles/media-breakpoints';
+@import '../../../styles/theme';
+
+.root {
+  display: flex;
+  border-bottom: 1px solid $athens-gray;
+  margin: 0 -25px;
+  margin-bottom: 35px;
+
+  @include tablet {
+    margin: 0 -15px;
+    margin-bottom: 35px;
+  }
+
+  @media screen and (max-width: 700px) {
+    flex-direction: column;
+  }
+}
+
+.leftBlock {
+  padding: 0 25px;
+  width: 55%;
+
+  @include tablet {
+    padding: 0 15px;
+  }
+
+  @media screen and (max-width: 865px) {
+    width: 50%;
+  }
+
+  @media screen and (max-width: 700px) {
+    width: 100%;
+  }
+}
+
+.article {
+  display: block !important;
+  margin-bottom: 0 !important;
+}
+
+.mainArticle {
+  width: 100%;
+  display: block !important;
+
+  .mainFigure {
+    margin-bottom: 24px;
+  }
+
+  .mainImg {
+    width: 100%;
+    height: auto;
+  }
+
+  .mainTitle {
+    color: $cod-gray;
+
+    @include mobile {
+      font-size: 28px;
+      text-align: center;
+    }
+
+    @include ThemeDark {
+      color: $ebb;
+    }
+  }
+
+  .description {
+    -webkit-box-orient: vertical;
+    display: -webkit-box !important;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+
+    @include mobile {
+      text-align: center;
+    }
+  }
+
+  @include mobile {
+    padding: 13px;
+
+    .heading {
+      justify-content: center;
+    }
+  }
+}
+
+.heading {
+  @include tablet {
+    gap: 10px !important;
+  }
+}
+
+.rightBlock {
+  display: grid;
+  grid-template-columns: 46% 46%;
+  column-gap: 30px;
+  row-gap: 30px;
+  width: 45%;
+  padding: 0 15px;
+
+  @media screen and (max-width: 865px) {
+    width: 50%;
+  }
+
+  @media screen and (max-width: 700px) {
+    width: 100%;
+    grid-template-columns: 48% 47%;
+  }
+
+  .descriptionRight {
+    display: none;
+  }
+
+  .title {
+    font-size: 18px;
+    -webkit-box-orient: vertical;
+    display: -webkit-box !important;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    color: $cod-gray;
+
+    @include ThemeDark {
+      color: $ebb;
+    }
+  }
+
+  .img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 24px;
+
+    @media screen and (max-width: 865px) {
+      height: 100px;
+    }
+
+    @media screen and (max-width: 700px) {
+      height: auto;
+    }
+  }
+
+  @include mobile {
+    display: none;
+  }
+}

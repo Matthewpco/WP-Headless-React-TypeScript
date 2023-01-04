@@ -1,0 +1,23 @@
+@import '../../styles/colors';
+@import '../../styles/media-breakpoints';
+@import '../../styles/theme';
+
+.root {
+  font-family: 'Merriweather', serif;
+  font-size: 40px;
+  font-weight: 900;
+  letter-spacing: -0.7px;
+  margin: 12px 0 18px;
+
+  @include mobile {
+    color: $black;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.7px;
+    margin: 16px 0;
+
+    @include ThemeDark {
+      color: $ebb;
+    }
+  }
+}

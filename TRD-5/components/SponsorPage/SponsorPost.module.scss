@@ -1,0 +1,10 @@
+@import '../../styles/colors';
+@import '../../styles/media-breakpoints';
+@import '../../styles/theme';
+
+.description,
+.publishedDate {
+  @include mobile {
+    display: none;
+  }
+}

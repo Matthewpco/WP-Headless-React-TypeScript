@@ -1,0 +1,33 @@
+@import '../../styles/colors';
+@import '../../styles/media-breakpoints';
+@import '../../styles/theme';
+
+.container {
+  display: grid;
+  grid-column-gap: 64px;
+  grid-template-columns: [center-start] auto [center-end right-start] 294px [right-end];
+
+  @include mobile_and_tablet {
+    grid-template-columns: [center-start right-start] auto [center-end right-end];
+  }
+}
+
+.center {
+  grid-column: center-start / center-end;
+}
+
+.right {
+  grid-column: right-start / right-end;
+
+  @include mobile_and_tablet {
+    display: none;
+  }
+}
+
+@include mobile {
+  .container,
+  .authorHeading {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}

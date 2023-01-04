@@ -1,0 +1,33 @@
+@import '../../styles/colors';
+@import '../../styles/media-breakpoints';
+@import '../../styles/theme';
+
+.root {
+  display: flex;
+  flex-direction: column;
+}
+
+.tagHeading {
+  h1:first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.content > div > div {
+  outline: none;
+}
+
+@include mobile {
+  .container,
+  .authorHeading {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
+
+@include mobile {
+  .content {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
