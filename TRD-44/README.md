@@ -6,7 +6,7 @@
 
 ## 🙋‍♂️ Introduction
 
-- This task was to create a dynamic hero header ad template using React best practices and converting it from static JavaScript to work with the Virtual DOM properly. 
+- This task was to create login, logout, and user registration pages to be served with Next.js
 
 <br>
 
