@@ -1,4 +1,4 @@
-![](https://github.com/Matthewpco/WP-Headless-React-TypeScript/blob/main/TRD-23/TRD-23.jpg?raw=true)
+![](https://github.com/Matthewpco/WP-Headless-React-TypeScript/blob/main/TRD-5/TRD-5.jpg?raw=true)
 
 # This is a task from an agile sprint with The Real Deal.
 
@@ -6,7 +6,7 @@
 
 ## 🙋‍♂️ Introduction
 
-- This task was to fix the metadata displaying the wrong information due to errors in custom implementation by contractors. Used a filter to change broken information in Yoast custom SEO plugin.
+- This task was to fix several issues with Google core web vitals by refactoring core features of the AdUnit such as having a set size for a container and fixing some static setup from contractors that was not being recognized properly.
 
 <br>
 
