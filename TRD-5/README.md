@@ -1,4 +1,4 @@
-![](https://github.com/Matthewpco/WP-Headless-React-TypeScript/blob/main/TRD-5/TRD-5.jpg?raw=true)
+![](https://raw.githubusercontent.com/Matthewpco/WP-Headless-React-TypeScript/main/TRD-5/Sticky-ads-right.jpg)
 
 # This is a task from an agile sprint with The Real Deal.
 
@@ -6,7 +6,7 @@
 
 ## 🙋‍♂️ Introduction
 
-- This task was to fix several issues with Google core web vitals by refactoring core features of the AdUnit such as having a set size for a container and fixing some static setup from contractors that was not being recognized properly.
+- This task was to fix several ad units that were badly positioned statically, and make the more responsive, sticky, and snap to the header on scroll.
 
 <br>
 
