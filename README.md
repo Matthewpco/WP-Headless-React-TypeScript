@@ -1,4 +1,4 @@
-![]https://github.com/Matthewpco/WP-Headless-React-TypeScript/blob/main/TWB-115/TRD-Ad-2.jpg?raw=true)
+![](https://github.com/Matthewpco/WP-Headless-React-TypeScript/blob/main/TRD-Ad-2.jpg)
 
 # This is a task list from agile sprints working with The Real Deal custom Headless Wordpress website.
 
@@ -20,4 +20,4 @@
 
   <br>
 
-![]https://github.com/Matthewpco/WP-Headless-React-TypeScript/blob/main/TWB-115/TRD-Ad-2.jpg?raw=true)
+![](https://github.com/Matthewpco/WP-Headless-React-TypeScript/blob/main/sentry-back-end.jpg)
