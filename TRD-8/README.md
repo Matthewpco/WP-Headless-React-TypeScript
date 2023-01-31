@@ -1,4 +1,4 @@
-![](https://github.com/Matthewpco/WP-Headless-React-TypeScript/blob/main/TRD-23/TRD-23.jpg?raw=true)
+![](https://github.com/Matthewpco/WP-Headless-React-TypeScript/blob/main/TRD-8/sentry-back-end.jpg?raw=true)
 
 # This is a task from an agile sprint with The Real Deal.
 
@@ -6,7 +6,7 @@
 
 ## 🙋‍♂️ Introduction
 
-- This task was to fix the metadata displaying the wrong information due to errors in custom implementation by contractors. Used a filter to change broken information in Yoast custom SEO plugin.
+- This task was to setup Sentry error reporting for the front end with Next.js passing secure environemnt variables for ocnfiguration, as well as a back-end Wordpress plugin to be able to receive errors from the website.
 
 <br>
 
@@ -16,6 +16,10 @@
 - JSX
 - Node
 - Next.js
+- PHP
+- Plugin Development
 - Headless Wordpress
 
   <br>
+
+![](https://github.com/Matthewpco/WP-Headless-React-TypeScript/blob/main/TRD-8/sentry-front-end.jpg?raw=true)
