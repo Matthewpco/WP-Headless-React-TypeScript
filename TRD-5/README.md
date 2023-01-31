@@ -1,4 +1,4 @@
-![](https://github.com/Matthewpco/WP-Headless-React-TypeScript/blob/main/TRD-23/TRD-23.jpg?raw=true)
+![](https://raw.githubusercontent.com/Matthewpco/WP-Headless-React-TypeScript/main/TRD-5/Sticky-ads-right.jpg)
 
 # This is a task from an agile sprint with The Real Deal.
 
@@ -6,7 +6,7 @@
 
 ## 🙋‍♂️ Introduction
 
-- This task was to fix the metadata displaying the wrong information due to errors in custom implementation by contractors. Used a filter to change broken information in Yoast custom SEO plugin.
+- This task was to fix several ad units that were badly positioned statically, and make the more responsive, sticky, and snap to the header on scroll.
 
 <br>
 
