@@ -1,4 +1,4 @@
-![](https://github.com/Matthewpco/WP-Headless-React-TypeScript/blob/main/TRD-23/TRD-23.jpg?raw=true)
+![](https://github.com/Matthewpco/WP-Headless-React-TypeScript/blob/main/TWB-110/tag-attributes-oldsite.jpg?raw=true)
 
 # This is a task from an agile sprint with The Real Deal.
 
@@ -6,7 +6,7 @@
 
 ## 🙋‍♂️ Introduction
 
-- This task was to fix the metadata displaying the wrong information due to errors in custom implementation by contractors. Used a filter to change broken information in Yoast custom SEO plugin.
+- This task was to update Google publisher tags being assigned by custom ad code in our headless wordpress implementation. Added and updated tags to properly reflect new web site.
 
 <br>
 
