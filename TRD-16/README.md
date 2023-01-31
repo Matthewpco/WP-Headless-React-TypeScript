@@ -1,4 +1,4 @@
-![](https://raw.githubusercontent.com/Matthewpco/WP-Headless-React-TypeScript/main/TRD-16/TRD-16.jpg?token=GHSAT0AAAAAABYLPK4WTS3GJAMCYIOLOSI2Y6ZK3BQ)
+![](https://github.com/Matthewpco/WP-Headless-React-TypeScript/blob/main/TRD-16/TRD-16.jpg?raw=true)
 
 # This is a task from an agile sprint with The Real Deal.
 
